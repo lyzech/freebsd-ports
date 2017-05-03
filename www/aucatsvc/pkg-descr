@@ -1,0 +1,11 @@
+A web service for your sndiod server to
+
+* control application volumes
+* send/receive MIDI events to/from e.g. a connected synthesizer to
+  * play music,
+  * set instruments,
+  * or visualize the currently playing notes.
+
+Every smartphone and tablet becomes an instrument ;-)
+
+WWW: https://github.com/t6/aucatsvc
