@@ -2,6 +2,7 @@
 
 PORTNAME=	igor
 PORTVERSION=	1.595
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://docscripts.glenbarber.us/tags/${PORTNAME}/${PORTVERSION}/
 
