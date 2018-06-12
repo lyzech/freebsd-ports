@@ -1,0 +1,10 @@
+--- igor.orig	2018-06-12 12:17:00 UTC
++++ igor
+@@ -326,6 +326,7 @@ sub tmpfilename {
+ }
+ 
+ sub filetype {
++	return $ENV{"IGOR_FILETYPE"} if defined($ENV{"IGOR_FILETYPE"});
+ 	my $fname = shift;
+ 	# detect type from extension if possible
+ 	my $ext = lastext($fname);
