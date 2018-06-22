@@ -1,4 +1,4 @@
-bin/baloo_file
+@comment bin/baloo_file
 bin/baloo_file_extractor
 bin/balooctl
 bin/baloosearch
