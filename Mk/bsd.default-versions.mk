@@ -16,8 +16,8 @@ _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
 LOCALBASE?=	/usr/local
 
 .for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT \
-	JULIA LAZARUS LINUX LLVM LUA MYSQL PERL5 PGSQL PHP PYTHON PYTHON2 \
-	PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
+	JULIA LAZARUS LIBRSVG2 LINUX LLVM LUA MYSQL PERL5 PGSQL PHP PYTHON \
+	PYTHON2 PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
 .if defined(${lang}_DEFAULT)
 ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
 .endif
@@ -55,6 +55,8 @@ GHOSTSCRIPT_DEFAULT?=	agpl
 JULIA_DEFAULT?=		1.0
 # Possible values: 2.0.4
 LAZARUS_DEFAULT?=	2.0.4
+# Possible values: librsvg2, librsvg2-rust
+LIBRSVG2_DEFAULT?=	librsvg2
 # Possible values: c6, c7
 LINUX_DEFAULT?=		c7
 # Possible values: 60, 70, 80, 90, -devel (to be used when non-base compiler is required)
