@@ -1,0 +1,172 @@
+Based on
+https://github.com/freebsd/poudriere/pull/554
+
+--- src/etc/poudriere.conf.sample.orig	2018-10-24 22:09:59 UTC
++++ src/etc/poudriere.conf.sample
+@@ -311,3 +311,9 @@ DISTFILES_CACHE=/usr/ports/distfiles
+ # processing of the queue slightly, especially for bulk -a builds.
+ # Default: no
+ #HTML_TRACK_REMAINING=yes
++
++# Do package seeding or not (fetching required binary packages from a mirror
++# that has the exact version we want)
++# Default: no
++#PKG_SEEDING=yes
++#PKG_SEEDING_MIRROR=pkg.freebsd.org
+--- src/share/poudriere/bulk.sh.orig	2018-10-24 22:09:59 UTC
++++ src/share/poudriere/bulk.sh
+@@ -58,6 +58,7 @@ Options:
+     -p tree     -- Specify on which ports tree the bulk build will be done
+     -R          -- Clean RESTRICTED packages after building
+     -r          -- Resursively test all dependencies as well
++    -s          -- Seed packages
+     -S          -- Don't recursively rebuild packages affected by other
+                    packages requiring incremental rebuild. This can result
+                    in broken packages if the ones updated do not retain
+@@ -90,7 +91,7 @@ INTERACTIVE_MODE=0
+ 
+ [ $# -eq 0 ] && usage
+ 
+-while getopts "aB:CcFf:iIj:J:knNp:RrSTtvwz:" FLAG; do
++while getopts "aB:CcFf:iIj:J:knNp:RrsSTtvwz:" FLAG; do
+ 	case "${FLAG}" in
+ 		a)
+ 			ALL=1
+@@ -147,6 +148,9 @@ while getopts "aB:CcFf:iIj:J:knNp:RrSTtvwz:" FLAG; do
+ 			;;
+ 		r)
+ 			PORTTESTING_RECURSIVE=1
++			;;
++		s)
++			PKG_SEEDING=1
+ 			;;
+ 		S)
+ 			SKIP_RECURSIVE_REBUILD=1
+--- src/share/poudriere/common.sh.orig	2018-10-24 22:09:59 UTC
++++ src/share/poudriere/common.sh
+@@ -1644,7 +1644,7 @@ enter_interactive() {
+ 		ensure_pkg_installed force_extract || \
+ 		    err 1 "Unable to extract pkg."
+ 		# Install the selected pkg package
+-		injail env USE_PACKAGE_DEPENDS_ONLY=1 \
++		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes \
+ 		    /usr/bin/make -C \
+ 		    ${PORTSDIR}/$(injail /usr/bin/make \
+ 		    -f ${PORTSDIR}/Mk/bsd.port.mk -V PKGNG_ORIGIN) \
+@@ -1662,14 +1662,14 @@ enter_interactive() {
+ 		originspec_decode "${originspec}" port dep_args flavor
+ 		# Install run-depends since this is an interactive test
+ 		msg "Installing run-depends for ${COLOR_PORT}${port} | ${pkgname}"
+-		injail env USE_PACKAGE_DEPENDS_ONLY=1 \
++		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes \
+ 		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
+ 		    ${flavor:+FLAVOR=${flavor}} run-depends ||
+ 		    msg_warn "Failed to install ${COLOR_PORT}${port} | ${pkgname}${COLOR_RESET} run-depends"
+ 		msg "Installing ${COLOR_PORT}${port} | ${pkgname}"
+ 		# Only use PKGENV during install as testport will store
+ 		# the package in a different place than dependencies
+-		injail env USE_PACKAGE_DEPENDS_ONLY=1 ${PKGENV} \
++		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes ${PKGENV} \
+ 		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
+ 		    ${flavor:+FLAVOR=${flavor}} install-package ||
+ 		    msg_warn "Failed to install ${COLOR_PORT}${port} | ${pkgname}"
+@@ -3165,7 +3165,7 @@ _real_build_port() {
+ 
+ 		if [ "${phase#*-}" = "depends" ]; then
+ 			# No need for nohang or PORT_FLAGS for *-depends
+-			injail /usr/bin/env USE_PACKAGE_DEPENDS_ONLY=1 ${phaseenv} \
++			injail /usr/bin/env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes ${phaseenv} \
+ 			    /usr/bin/make -C ${portdir} ${MAKE_ARGS} \
+ 			    ${phase} || return 1
+ 		else
+@@ -7148,6 +7148,10 @@ prepare_ports() {
+ 
+ 	clean_build_queue
+ 
++	pkg_seeding
++
++	clean_build_queue
++
+ 	# Call the deadlock code as non-fatal which will check for cycles
+ 	msg "Sanity checking build queue"
+ 	bset status "pkgqueue_sanity_check:"
+@@ -7267,6 +7271,68 @@ load_priorities() {
+ 	return 0
+ }
+ 
++pkg_seeding() {
++	[ "${PKG_SEEDING}" != "no" ] || return 0
++
++	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
++	    err 1 "pkg_seeding requires PWD=${MASTERMNT}/.p"
++
++	local url url_prefix jail_version jail_arch dest
++	local seed_total seed_ok
++
++	# Set up URL prefix
++	jail_version=$(jget ${JAILNAME} version)
++	# $MAJOR_RELEASE-$SUBRELEASE.RELEASE-px --> $MAJOR_RELEASE
++	jail_version="${jail_version%%.*}"
++	jail_arch=$(jget ${JAILNAME} arch)
++	jail_arch=$(echo ${jail_arch} | sed 's,^arm64\.,,')
++	url_prefix="${PKG_SEEDING_METHOD}://${PKG_SEEDING_MIRROR}"
++	url_prefix="${url_prefix}/FreeBSD:${jail_version}:${jail_arch}/latest/All"
++
++	msg "Seeding packages from ${PKG_SEEDING_MIRROR}"
++	bset status "packageseeding:"
++
++	seed_ok=0
++	parallel_start
++	while read pkgname originspec dep_reason; do
++		# Don't fetch ports explicitly requested to be built
++		# Only fetch dependencies the users don't bother being built
++		# by others
++		pkgname="${pkgname}.${PKG_EXT}"
++		url="${url_prefix}/${pkgname}"
++		dest="${PACKAGES}/All/${pkgname}"
++		mkdir -p "${PACKAGES}/All"
++		if [ "${dep_reason}" != "listed" ] && [ ! -f "$dest" ]; then
++			parallel_run pkg_seeding_download "${url}" "${pkgname}" "${originspec}" && \
++                seed_ok=$((${seed_ok} + 1))
++		fi
++	done < "all_pkgs"
++
++	if ! parallel_stop; then
++		#err 1 "Fatal errors encountered seeding packages."
++	fi
++
++	msg "Package seeding done, seeded ${seed_ok} packages."
++}
++
++pkg_seeding_download() {
++	[ $# -ne 3 ] && eargs pkg_seeding_download url pkgname originspec
++
++	msg_debug "Seeding package from: $1"
++	(
++		cd "${PACKAGES}/All"
++		fetch -a -w 1 -m -o "$2" "$1" || fetch -a -w 1 -r -o "$2" "$1"
++	)
++
++	if [ $? -eq 0 ]; then
++		msg_verbose "Successfully seeded $3 to $2"
++		return 0
++	else
++		msg_debug "Failed seeding $3"
++		return 1
++	fi
++}
++
+ balance_pool() {
+ 	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
+ 	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
+@@ -7788,6 +7854,10 @@ DRY_RUN=0
+ : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
+ 
+ : ${HTML_TYPE:=inline}
++
++: ${PKG_SEEDING:=no}
++: ${PKG_SEEDING_METHOD:=https}
++: ${PKG_SEEDING_MIRROR:=pkg.freebsd.org}
+ 
+ if [ -n "${MAX_MEMORY}" ]; then
+ 	MAX_MEMORY_BYTES="$((${MAX_MEMORY} * 1024 * 1024 * 1024))"
