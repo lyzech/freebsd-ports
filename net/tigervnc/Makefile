@@ -33,10 +33,10 @@ CONFLICTS=	tightvnc-[0-9]*
 
 GH_ACCOUNT=	TigerVNC
 
-USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont xkbfile \
+USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont2 xkbfile \
 		xorg-macros xorgproto xrandr xrender xtrans xtst
 
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -I${LOCALBASE}/include/libdrm
 
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
 OPTIONS_DEFAULT=	GNUTLS PAM VIEWER

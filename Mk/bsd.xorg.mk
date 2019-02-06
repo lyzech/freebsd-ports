@@ -59,6 +59,7 @@ USE_XORG+=      xorg-macros
 . if ${XORG_CAT} == "driver"
 USE_XORG+=	xorg-server xorgproto xi
 CONFIGURE_ENV+=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
+CFLAGS+=	-Werror=uninitialized
 USES+=		libtool
 INSTALL_TARGET=	install-strip
 . endif
@@ -79,6 +80,7 @@ PLIST_FILES+=	"@comment ${FONTSDIR}/fonts.dir" \
 . if ${XORG_CAT} == "lib"
 USES+=		pathfix libtool
 USE_LDCONFIG=	yes
+CFLAGS+=	-Werror=uninitialized
 CONFIGURE_ARGS+=--enable-malloc0returnsnull
 . endif
 
@@ -89,7 +91,8 @@ USES+=	pathfix
 . if ${XORG_CAT} == "xserver"
 DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
-USES+=	pathfix
+USES+=		libtool pathfix
+CFLAGS+=       -Werror=uninitialized
 CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
 					--with-fontrootdir=${LOCALBASE}/share/fonts
 
