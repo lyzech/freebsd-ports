@@ -90,7 +90,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7267,6 +7271,68 @@ load_priorities() {
+@@ -7267,6 +7271,72 @@ load_priorities() {
  	return 0
  }
  
@@ -149,6 +149,10 @@ https://github.com/freebsd/poudriere/pull/554
 +
 +	if [ $? -eq 0 ]; then
 +		msg_verbose "Successfully seeded $3 to $2"
++		if [ "$3" = "ports-mgmt/pkg" ] || [ "$3" = "ports-mgmt/pkg-devel" ]; then
++			mkdir -p "${PACKAGES}/Latest"
++			install -l rs "${PACKAGES}/All/${2}" "${PACKAGES}/Latest/pkg.txz"
++		fi
 +		return 0
 +	else
 +		msg_debug "Failed seeding $3"
@@ -159,7 +163,7 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -7788,6 +7854,10 @@ DRY_RUN=0
+@@ -7788,6 +7858,10 @@ DRY_RUN=0
  : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
  
  : ${HTML_TYPE:=inline}
