@@ -108,7 +108,7 @@ https://github.com/freebsd/poudriere/pull/554
 +	# $MAJOR_RELEASE-$SUBRELEASE.RELEASE-px --> $MAJOR_RELEASE
 +	jail_version="${jail_version%%.*}"
 +	jail_arch=$(jget ${JAILNAME} arch)
-+	jail_arch=$(echo ${jail_arch} | sed 's,^arm64\.,,')
++	jail_arch=$(echo ${jail_arch} | sed 's,^arm64\.,,' | sed 's,^arm\.,,')
 +	url_prefix="${PKG_SEEDING_METHOD}://${PKG_SEEDING_MIRROR}"
 +	url_prefix="${url_prefix}/FreeBSD:${jail_version}:${jail_arch}/latest/All"
 +
