@@ -93,6 +93,13 @@ UBOOT_METADATA_IMX6_RAW_BS=	512
 UBOOT_PLIST_RK3399=	idbspl.img u-boot.itb
 UBOOT_ARCH_RK3399=	aarch64
 
+# Override for ARMADA38X family
+UBOOT_PLIST_ARMADA38X=	u-boot-spl.kwb
+UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
+UBOOT_METADATA_ARMADA38X_METHOD=	raw
+UBOOT_METADATA_ARMADA38X_RAW_OFFSET=	1
+UBOOT_METADATA_ARMADA38X_RAW_BS=	512
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -197,7 +204,7 @@ post-build:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
 .endfor
 .endif
-.if ${FAMILY} == "rk3399"
+.if defined(FAMILY) && ${FAMILY} == rk3399
 	mkimage -n rk3399 -T rksd -d ${WRKSRC}/spl/u-boot-spl.bin ${WRKSRC}/idbspl.img
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST

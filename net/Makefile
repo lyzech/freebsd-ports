@@ -6,7 +6,6 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
-    SUBDIR += GeoIP
     SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += activemq
@@ -78,6 +77,7 @@
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
     SUBDIR += ceph
+    SUBDIR += ceph13
     SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony
@@ -196,7 +196,6 @@
     SUBDIR += go-amqp
     SUBDIR += go-bapu
     SUBDIR += go-cs
-    SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
     SUBDIR += go-nats
@@ -362,6 +361,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcmis
+    SUBDIR += libcoap
     SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
@@ -373,7 +373,7 @@
     SUBDIR += libgrss
     SUBDIR += libgweather
     SUBDIR += libilbc
-    SUBDIR += libjson-rpc-cpp 
+    SUBDIR += libjson-rpc-cpp
     SUBDIR += libkgapi
     SUBDIR += libksieve
     SUBDIR += libkvkontakte
@@ -418,6 +418,7 @@
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
+    SUBDIR += libusipp
     SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
@@ -469,6 +470,7 @@
     SUBDIR += miruo
     SUBDIR += mlvpn
     SUBDIR += mobile-broadband-provider-info
+    SUBDIR += mod_amd
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
@@ -600,7 +602,6 @@
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
     SUBDIR += p5-Frontier-RPC
-    SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
     SUBDIR += p5-Geo-IPfree
     SUBDIR += p5-GeoIP2
@@ -748,6 +749,7 @@
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
     SUBDIR += p5-Net-PcapUtils
+    SUBDIR += p5-Net-Ping
     SUBDIR += p5-Net-Ping-External
     SUBDIR += p5-Net-Proxy
     SUBDIR += p5-Net-PubSubHubbub-Publisher
@@ -960,14 +962,12 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
-    SUBDIR += pecl-geoip
     SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
     SUBDIR += pecl-zmq
-    SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
     SUBDIR += php71-ldap
@@ -1014,7 +1014,6 @@
     SUBDIR += pwhois
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
-    SUBDIR += py-GeoIP
     SUBDIR += py-GeoIP2
     SUBDIR += py-aiohttp-socks
     SUBDIR += py-amqp
@@ -1034,6 +1033,7 @@
     SUBDIR += py-gntp
     SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
+    SUBDIR += py-h11
     SUBDIR += py-haproxy-log-analysis
     SUBDIR += py-haproxyctl
     SUBDIR += py-httpstat
@@ -1139,6 +1139,7 @@
     SUBDIR += py-urllib3
     SUBDIR += py-wmi-query
     SUBDIR += py-wolframalpha
+    SUBDIR += py-wsproto
     SUBDIR += py-xmlrpc
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
@@ -1256,7 +1257,6 @@
     SUBDIR += rubygem-fog-voxel
     SUBDIR += rubygem-fog-vsphere
     SUBDIR += rubygem-fog-xenserver
-    SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitaly
     SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitlab_omniauth-ldap
@@ -1400,7 +1400,6 @@
     SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += stund
-    SUBDIR += subnetcalc
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnup

@@ -417,6 +417,7 @@
     SUBDIR += libcss
     SUBDIR += libcsv
     SUBDIR += libcue
+    SUBDIR += libcyaml
     SUBDIR += libdiff
     SUBDIR += libe-book
     SUBDIR += libebml
@@ -1480,6 +1481,7 @@
     SUBDIR += rarian
     SUBDIR += rasqal
     SUBDIR += re_graph
+    SUBDIR += re-flex
     SUBDIR += redet
     SUBDIR += redland
     SUBDIR += redland-bindings
@@ -1696,9 +1698,9 @@
     SUBDIR += scim-openvanilla
     SUBDIR += scim-table-imengine
     SUBDIR += scr2txt
-    SUBDIR += scrollkeeper
     SUBDIR += scss
     SUBDIR += scws
+    SUBDIR += sd
     SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdif
