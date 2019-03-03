@@ -113,7 +113,7 @@ https://github.com/freebsd/poudriere/pull/554
 +		fi
 +	done < "all_pkgs"
 +
-+	pkg_cmd="/usr/local/sbin/pkg -o ABI=${abi} -o PKG_DBDIR=/var/db/poudriere/pkg/${abi}"
++	pkg_cmd="/usr/local/sbin/pkg -o ABI=${abi} -o PKG_DBDIR=/var/db/poudriere/pkg/${JAILNAME}"
 +	if ! ${pkg_cmd} fetch -r FreeBSD -y -o "${PACKAGES}" ${pkgs}; then
 +		err 1 "pkg fetch failed"
 +	fi
