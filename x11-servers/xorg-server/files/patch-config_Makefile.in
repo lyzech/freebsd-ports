@@ -57,18 +57,16 @@
  libconfig_la_OBJECTS = $(am_libconfig_la_OBJECTS)
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -156,8 +160,8 @@
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
+@@ -157,7 +161,7 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__maybe_remake_depfiles = depfiles
--am__depfiles_remade = ./$(DEPDIR)/config.Plo ./$(DEPDIR)/dbus-core.Plo \
+ am__depfiles_remade = ./$(DEPDIR)/config.Plo ./$(DEPDIR)/dbus-core.Plo \
 -	./$(DEPDIR)/hal.Plo ./$(DEPDIR)/udev.Plo \
-+am__depfiles_remade = ./$(DEPDIR)/config.Plo ./$(DEPDIR)/devd.Plo \
-+	./$(DEPDIR)/dbus-core.Plo ./$(DEPDIR)/hal.Plo ./$(DEPDIR)/udev.Plo \
++	./$(DEPDIR)/devd.Plo ./$(DEPDIR)/hal.Plo ./$(DEPDIR)/udev.Plo \
  	./$(DEPDIR)/wscons.Plo
  am__mv = mv -f
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -593,12 +597,14 @@
+@@ -593,12 +597,14 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
