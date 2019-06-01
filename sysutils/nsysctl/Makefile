@@ -1,24 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	nsysctl
-DISTVERSION=	0.1
+DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	New sysctl utility with libxo and extra options
+COMMENT=	Utility to get or set the kernel state supporting libxo output
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITLAB=	yes
-GL_ACCOUNT=	alfix
-GL_COMMIT=	102780d056c2f03d1653f7c3f0bd9d8d5d4e91fd
+LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man8/${PORTNAME}.8.gz
+USE_GITLAB=	yes
+
+GL_ACCOUNT=	alfix
+GL_COMMIT=	a59ec8cfcd5cbb77fa06bc5787c6d718d2b3e501
+
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
+		sbin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.mk>

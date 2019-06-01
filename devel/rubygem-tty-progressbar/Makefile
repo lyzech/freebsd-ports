@@ -3,6 +3,7 @@
 
 PORTNAME=	tty-progressbar
 PORTVERSION=	0.16.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

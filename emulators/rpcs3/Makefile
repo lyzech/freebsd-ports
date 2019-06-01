@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.6-7901 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g7ea04d5d7
+DISTVERSION=	0.0.6-8179 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gcafa4521e
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -27,11 +27,11 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:5c906fd1694e:llvm/llvm \
+		RPCS3:llvm:b860b5e8f4ee:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:1e550aa:asmjit/asmjit \
-		KhronosGroup:glslang:5.1-184-gc99304c5:glslang/Vulkan/glslang \
+		KhronosGroup:glslang:7.11.3214:glslang/Vulkan/glslang \
 		Microsoft:GSL:v2.0.0:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
@@ -56,10 +56,12 @@ ALSA_CMAKE_BOOL=	USE_ALSA
 
 EVDEV_DESC=		libevdev-based joystick support
 EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
+EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 GDB_DESC=		GDB remote stub (powerpc64 target)
 GDB_CMAKE_BOOL=		WITH_GDB
+GDB_BROKEN=		https://github.com/RPCS3/rpcs3/issues/5946
 
 LLVM_DESC=		LLVM-based PPU recompiler
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM

@@ -32,11 +32,7 @@
     SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += gbsdconv
-    SUBDIR += hs-aeson
-    SUBDIR += hs-aeson-compat
     SUBDIR += hs-aeson-pretty
-    SUBDIR += hs-json
-    SUBDIR += hs-sandi
     SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html
@@ -156,7 +152,6 @@
     SUBDIR += py-better-bencode
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
-    SUBDIR += py-pint
     SUBDIR += py-rencode
     SUBDIR += py-text-unidecode
     SUBDIR += py-unidecode

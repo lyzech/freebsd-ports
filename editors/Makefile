@@ -21,17 +21,17 @@
     SUBDIR += chexedit
     SUBDIR += codelite
     SUBDIR += cooledit
-    SUBDIR += cudatext
     SUBDIR += cream
+    SUBDIR += cudatext
     SUBDIR += deforaos-editor
     SUBDIR += dexed
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
-    SUBDIR += dlangide
     SUBDIR += drjava
     SUBDIR += dte
     SUBDIR += e3
+    SUBDIR += e93
     SUBDIR += ecce
     SUBDIR += ecrire
     SUBDIR += edith
@@ -55,7 +55,6 @@
     SUBDIR += gnome-latex
     SUBDIR += gobby
     SUBDIR += gomate
-    SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse
     SUBDIR += hexedit
@@ -254,6 +253,7 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xi-core
+    SUBDIR += xi-term
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yudit

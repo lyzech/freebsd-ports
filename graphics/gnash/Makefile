@@ -3,7 +3,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	40
+PORTREVISION=	41
 CATEGORIES=	graphics
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -26,8 +26,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gl \
-		gmake gnome jpeg libtool pkgconfig tar:bzip2
+USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
+		pkgconfig jpeg gnome gl desktop-file-utils
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes

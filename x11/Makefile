@@ -168,7 +168,6 @@
     SUBDIR += libfm
     SUBDIR += libfm-extra
     SUBDIR += libfm-qt
-    SUBDIR += libfmqt-l10n
     SUBDIR += libgnome
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
@@ -208,8 +207,6 @@
     SUBDIR += lxpanel
     SUBDIR += lxqt-about
     SUBDIR += lxqt-globalkeys
-    SUBDIR += lxqt-globalkeys-l10n
-    SUBDIR += lxqt-l10n
     SUBDIR += lxqt-runner
     SUBDIR += lxrandr
     SUBDIR += mate
@@ -265,19 +262,21 @@
     SUBDIR += printscreen
     SUBDIR += props
     SUBDIR += py-caffeine-ng
+    SUBDIR += py-pyscreenshot
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += py-xdot06
+    SUBDIR += qimageblitz
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
-    SUBDIR += qterminal-l10n
     SUBDIR += radare-cutter
     SUBDIR += rendercheck
     SUBDIR += rgb
     SUBDIR += rofi
+    SUBDIR += rofi-calc
     SUBDIR += rofi-pass
     SUBDIR += rox-wallpaper
     SUBDIR += roxbg
@@ -309,6 +308,7 @@
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
+    SUBDIR += swaybg
     SUBDIR += swayidle
     SUBDIR += swaylock
     SUBDIR += sxhkd
@@ -357,7 +357,6 @@
     SUBDIR += xballoon
     SUBDIR += xbanish
     SUBDIR += xbanner
-    SUBDIR += xbelld
     SUBDIR += xbiff
     SUBDIR += xbindkeys
     SUBDIR += xbitmaps
@@ -484,7 +483,6 @@
     SUBDIR += xscreensaver-gnome
     SUBDIR += xscreensaver-gnome-hacks
     SUBDIR += xscreensaver.app
-    SUBDIR += xsel
     SUBDIR += xsel-conrad
     SUBDIR += xset
     SUBDIR += xsetmode

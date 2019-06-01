@@ -4,6 +4,7 @@
 PORTNAME=	exiv2
 DISTVERSION=	0.27.0
 DISTVERSIONSUFFIX=	a-Source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/builds/
@@ -11,7 +12,7 @@ MASTER_SITES=	http://www.exiv2.org/builds/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Exif, IPTC, and XMP metadata manipulation library and tools
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2

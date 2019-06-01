@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bc
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	gh-
 
@@ -17,16 +18,17 @@ GH_ACCOUNT=	gavinhoward
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ARGS=	-G
+CFLAGS+=	--std=c99
 
 CONFLICTS_INSTALL=	gnubc-[0-9]*
-
-PLIST_FILES=	bin/bc bin/dc man/man1/bc.1.gz man/man1/dc.1.gz
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/bc ${STAGEDIR}${PREFIX}/bin/
 		${LN} ${STAGEDIR}${PREFIX}/bin/bc ${STAGEDIR}${PREFIX}/bin/dc
 		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		${WRKSRC}/locale_install.sh ${PREFIX}/share/nls/%L/%N.cat ${PORTNAME} ${STAGEDIR}
+		${INSTALL} -ls ${STAGEDIR}${PREFIX}/share/nls/en_US.US-ASCII/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
 
 do-test:
 		${MAKE} -C ${WRKSRC} test

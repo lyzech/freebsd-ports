@@ -24,7 +24,6 @@
     SUBDIR += comserv
     SUBDIR += concordance
     SUBDIR += congruity
-    SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cqrlog
     SUBDIR += cubicsdr
@@ -36,6 +35,7 @@
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += direwolf
+    SUBDIR += dsd
     SUBDIR += dump1090
     SUBDIR += ebook2cw
     SUBDIR += ebook2cwgui
@@ -107,6 +107,7 @@
     SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += openobex
+    SUBDIR += openzwave
     SUBDIR += owfs
     SUBDIR += p5-Cisco-UCS
     SUBDIR += p5-Device-Gsm
@@ -205,6 +206,7 @@
     SUBDIR += wy60
     SUBDIR += xastir
     SUBDIR += xcwcp
+    SUBDIR += xdemorse
     SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xmorse

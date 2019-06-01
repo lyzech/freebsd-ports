@@ -11,6 +11,7 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += biococoa
+    SUBDIR += bolt-lmm
     SUBDIR += bowtie
     SUBDIR += bowtie2
     SUBDIR += bwa
@@ -22,6 +23,7 @@
     SUBDIR += clustal-omega
     SUBDIR += clustalw
     SUBDIR += consed
+    SUBDIR += cufflinks
     SUBDIR += cytoscape
     SUBDIR += ddocent
     SUBDIR += diamond
@@ -33,6 +35,7 @@
     SUBDIR += fastahack
     SUBDIR += fastdnaml
     SUBDIR += fastool
+    SUBDIR += fastp
     SUBDIR += fastqc
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
@@ -41,12 +44,14 @@
     SUBDIR += freebayes
     SUBDIR += garlic
     SUBDIR += gatk
+    SUBDIR += gemma
     SUBDIR += gff2ps
     SUBDIR += gmap
     SUBDIR += gperiodic
     SUBDIR += graphlan
     SUBDIR += grappa
     SUBDIR += groopm
+    SUBDIR += hhsuite
     SUBDIR += hisat2
     SUBDIR += hmmer
     SUBDIR += htslib
@@ -66,8 +71,10 @@
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += migrate
+    SUBDIR += minimap2
     SUBDIR += molden
     SUBDIR += mopac
+    SUBDIR += mothur
     SUBDIR += mrbayes
     SUBDIR += mummer
     SUBDIR += muscle
@@ -113,6 +120,7 @@
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
     SUBDIR += py-cutadapt
+    SUBDIR += py-dnaio
     SUBDIR += py-fastTSNE
     SUBDIR += py-gffutils
     SUBDIR += py-gtfparse
@@ -122,6 +130,7 @@
     SUBDIR += py-orange3-single-cell
     SUBDIR += py-pyfaidx
     SUBDIR += py-pysam
+    SUBDIR += py-xenaPython
     SUBDIR += pycogent
     SUBDIR += pyfasta
     SUBDIR += python-nexus
@@ -141,6 +150,7 @@
     SUBDIR += slclust
     SUBDIR += smithwaterman
     SUBDIR += stacks
+    SUBDIR += star
     SUBDIR += stringtie
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
@@ -153,6 +163,7 @@
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
+    SUBDIR += vsearch
     SUBDIR += wise
 
 .include <bsd.port.subdir.mk>

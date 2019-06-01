@@ -81,12 +81,16 @@
     SUBDIR += baloo-widgets
     SUBDIR += bamf
     SUBDIR += bareos-client
-    SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
+    SUBDIR += bareos-traymonitor
     SUBDIR += bareos16-client
     SUBDIR += bareos16-client-static
     SUBDIR += bareos16-server
+    SUBDIR += bareos17-client
+    SUBDIR += bareos17-client-static
+    SUBDIR += bareos17-server
+    SUBDIR += barrier
     SUBDIR += bastille
     SUBDIR += batmon
     SUBDIR += battmond
@@ -102,7 +106,6 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
-    SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
@@ -214,7 +217,6 @@
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
     SUBDIR += ctop
-    SUBDIR += curly
     SUBDIR += currtime
     SUBDIR += cw
     SUBDIR += daa2iso
@@ -250,7 +252,6 @@
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
-    SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += docker
@@ -302,6 +303,7 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
+    SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
@@ -448,8 +450,6 @@
     SUBDIR += graylog
     SUBDIR += grub2
     SUBDIR += grub2-bhyve
-    SUBDIR += grub2-efi
-    SUBDIR += grub2-pcbsd
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
@@ -486,10 +486,6 @@
     SUBDIR += hpacucli
     SUBDIR += hploscripts
     SUBDIR += hptcli
-    SUBDIR += hs-cpu
-    SUBDIR += hs-disk-free-space
-    SUBDIR += hs-ekg-core
-    SUBDIR += hs-mountpoints
     SUBDIR += hstr
     SUBDIR += htop
     SUBDIR += httplog
@@ -664,7 +660,6 @@
     SUBDIR += mcollective-shell-client
     SUBDIR += mcron
     SUBDIR += mcweject
-    SUBDIR += mdcp
     SUBDIR += mdf2iso
     SUBDIR += megacli
     SUBDIR += megarc
@@ -678,6 +673,7 @@
     SUBDIR += mgeupsd
     SUBDIR += minikube
     SUBDIR += minimunin
+    SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkdesktop
@@ -1008,6 +1004,7 @@
     SUBDIR += py-azure-cli-vm
     SUBDIR += py-bcfg2
     SUBDIR += py-bitrot
+    SUBDIR += py-borgmatic
     SUBDIR += py-cdmi
     SUBDIR += py-cpuinfo
     SUBDIR += py-croniter
@@ -1031,6 +1028,8 @@
     SUBDIR += py-honcho
     SUBDIR += py-hpilo
     SUBDIR += py-iowait
+    SUBDIR += py-leviathan
+    SUBDIR += py-mitogen
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
     SUBDIR += py-packet-python
@@ -1119,8 +1118,10 @@
     SUBDIR += rsyslog8
     SUBDIR += rtty
     SUBDIR += rubygem-backup
+    SUBDIR += rubygem-bolt
     SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bundler
+    SUBDIR += rubygem-bundler1
     SUBDIR += rubygem-bundler_ext
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
@@ -1219,7 +1220,6 @@
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbase
-    SUBDIR += sbsigntool
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
@@ -1287,6 +1287,7 @@
     SUBDIR += swapd
     SUBDIR += swapexd
     SUBDIR += swapmon
+    SUBDIR += swapusage
     SUBDIR += sweeper
     SUBDIR += symlinks
     SUBDIR += symon
@@ -1308,6 +1309,7 @@
     SUBDIR += syslog-ng318
     SUBDIR += syslog-ng319
     SUBDIR += syslog-ng320
+    SUBDIR += syslog-ng321
     SUBDIR += syslog-ng39
     SUBDIR += syslogger
     SUBDIR += sysrc
@@ -1376,8 +1378,11 @@
     SUBDIR += u-boot-nanopi-m1plus
     SUBDIR += u-boot-nanopi-neo
     SUBDIR += u-boot-nanopi-neo-air
+    SUBDIR += u-boot-nanopi-neo2
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
+    SUBDIR += u-boot-olinuxino-lime2
+    SUBDIR += u-boot-olinuxino-lime2-emmc
     SUBDIR += u-boot-orangepi-one
     SUBDIR += u-boot-orangepi-pc
     SUBDIR += u-boot-orangepi-pc-plus
@@ -1411,6 +1416,8 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += uefi-edk2-bhyve-devel
+    SUBDIR += uefi-edk2-qemu
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
@@ -1521,6 +1528,7 @@
     SUBDIR += xvidcap
     SUBDIR += yadm
     SUBDIR += yank
+    SUBDIR += z
     SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
