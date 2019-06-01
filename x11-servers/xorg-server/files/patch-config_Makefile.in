@@ -94,3 +94,19 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hal.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/udev.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wscons.Plo@am__quote@ # am--include-marker
+@@ -846,6 +853,7 @@ clean-am: clean-generic clean-libtool clean-noinstLTLI
+ distclean: distclean-am
+ 		-rm -f ./$(DEPDIR)/config.Plo
+ 	-rm -f ./$(DEPDIR)/dbus-core.Plo
++	-rm -f ./$(DEPDIR)/devd.Plo
+ 	-rm -f ./$(DEPDIR)/hal.Plo
+ 	-rm -f ./$(DEPDIR)/udev.Plo
+ 	-rm -f ./$(DEPDIR)/wscons.Plo
+@@ -896,6 +904,7 @@ installcheck-am:
+ maintainer-clean: maintainer-clean-am
+ 		-rm -f ./$(DEPDIR)/config.Plo
+ 	-rm -f ./$(DEPDIR)/dbus-core.Plo
++	-rm -f ./$(DEPDIR)/devd.Plo
+ 	-rm -f ./$(DEPDIR)/hal.Plo
+ 	-rm -f ./$(DEPDIR)/udev.Plo
+ 	-rm -f ./$(DEPDIR)/wscons.Plo
