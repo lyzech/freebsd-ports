@@ -10,12 +10,11 @@ COMMENT=	X client-side cursor loading library
 
 LICENSE=	MIT
 
+USES=		cpe
 XORG_CAT=	lib
 USE_XORG=	xrender x11 xfixes xorgproto
-
-USES+=	cpe
-CPE_PRODUCT=	libxcursor
 CPE_VENDOR=	x
+CPE_PRODUCT=	libxcursor
 
 CONFIGURE_ARGS=	--with-icondir=${PREFIX}/share/icons
 INSTALL_TARGET=	install-strip
