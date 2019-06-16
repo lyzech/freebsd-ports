@@ -9,11 +9,14 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X DGA Extension
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 XORG_CAT=	lib
 USE_XORG=	x11 xext xorgproto
-USES+=	cpe
-CPE_PRODUCT=	libxxf86dga
 CPE_VENDOR=	x
+CPE_PRODUCT=	libxxf86dga
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
