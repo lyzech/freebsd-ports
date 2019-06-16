@@ -14,4 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 XORG_CAT=	lib
 USE_XORG=	x11 xorgproto
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.mk>
