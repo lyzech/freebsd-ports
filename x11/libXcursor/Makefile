@@ -9,6 +9,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe
 XORG_CAT=	lib
