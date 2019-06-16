@@ -10,13 +10,15 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 Extension library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 XORG_CAT=	lib
 USE_XORG=	x11 xau xorgproto
+CPE_VENDOR=	x
+CPE_PRODUCT=	libxext
+
 CONFIGURE_ARGS+=--disable-specs --without-xmlto
 INSTALL_TARGET=	install-strip
-USES+=	cpe
-CPE_PRODUCT=	libxext
-CPE_VENDOR=	x
 
 .include <bsd.port.mk>
