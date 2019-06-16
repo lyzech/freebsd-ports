@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe
 XORG_CAT=	lib
 USE_XORG=	x11 xext xv xorgproto
-CPE_PRODUCT=	libxvmc
 CPE_VENDOR=	x
+CPE_PRODUCT=	libxvmc
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
