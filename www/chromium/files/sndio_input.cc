@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+#include <cstdlib>
+
 #include "base/bind.h"
 #include "base/logging.h"
 #include "base/macros.h"
@@ -65,7 +67,7 @@ bool SndioAudioInputStream::Open() {
   par.le = SIO_LE_NATIVE;
   par.appbufsz = params.frames_per_buffer();
 
-  hdl = sio_open(SIO_DEVANY, SIO_REC, 0);
+  hdl = sio_open(getenv("REC_AUDIODEVICE"), SIO_REC, 0);
 
   if (hdl == NULL) {
     LOG(ERROR) << "Couldn't open audio device.";
