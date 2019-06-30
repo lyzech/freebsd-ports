@@ -516,6 +516,7 @@
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntpa
+    SUBDIR += ntpsec
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nuster
@@ -1428,7 +1429,6 @@
     SUBDIR += tftpgrab
     SUBDIR += thcrut
     SUBDIR += throttled
-    SUBDIR += tigervnc
     SUBDIR += tigervnc-server
     SUBDIR += tigervnc-viewer
     SUBDIR += tightvnc

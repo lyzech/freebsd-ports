@@ -15,6 +15,7 @@
     SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-Rdpack
     SUBDIR += R-cran-abind
     SUBDIR += R-cran-bindr
     SUBDIR += R-cran-bindrcpp
@@ -34,8 +35,8 @@
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
     SUBDIR += R-cran-foreach
-    SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gbRd
+    SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
     SUBDIR += R-cran-generics
     SUBDIR += R-cran-glmnet
@@ -63,7 +64,6 @@
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-purrr
     SUBDIR += R-cran-randomForest
-    SUBDIR += R-cran-Rdpack
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-repr
     SUBDIR += R-cran-reshape
@@ -147,6 +147,7 @@
     SUBDIR += argdata
     SUBDIR += argouml
     SUBDIR += argp-standalone
+    SUBDIR += args
     SUBDIR += argtable
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-gnueabi-binutils
@@ -779,6 +780,7 @@
     SUBDIR += gettext-runtime
     SUBDIR += gettext-tools
     SUBDIR += gflags
+    SUBDIR += ghidra
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gindent
@@ -1585,6 +1587,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
+    SUBDIR += nextpnr
     SUBDIR += nexus2-oss
     SUBDIR += nimble
     SUBDIR += nini
@@ -4325,6 +4328,7 @@
     SUBDIR += py-delfick_error
     SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
+    SUBDIR += py-deprecated
     SUBDIR += py-deprecation
     SUBDIR += py-dexml
     SUBDIR += py-dialog
@@ -4646,6 +4650,7 @@
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-openapi-codec
+    SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opendht
     SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
@@ -4717,6 +4722,7 @@
     SUBDIR += py-pip-api
     SUBDIR += py-pip-tools
     SUBDIR += py-pip-tools2
+    SUBDIR += py-pipdeptree
     SUBDIR += py-pipenv
     SUBDIR += py-pkgconfig
     SUBDIR += py-plac
@@ -4828,6 +4834,7 @@
     SUBDIR += py-pytest-capturelog
     SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-django
+    SUBDIR += py-pytest-fixture-config
     SUBDIR += py-pytest-flake8
     SUBDIR += py-pytest-flakes
     SUBDIR += py-pytest-forked
@@ -4836,10 +4843,13 @@
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
     SUBDIR += py-pytest-relaxed
+    SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-runner
+    SUBDIR += py-pytest-shutil
     SUBDIR += py-pytest-sugar
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
+    SUBDIR += py-pytest-virtualenv
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-python-Levenshtein
@@ -4920,7 +4930,7 @@
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-ride
-    SUBDIR += py-robotframework-selenium2library
+    SUBDIR += py-robotframework-seleniumlibrary
     SUBDIR += py-robotremoteserver
     SUBDIR += py-rope
     SUBDIR += py-rose
@@ -4946,6 +4956,7 @@
     SUBDIR += py-selectors2
     SUBDIR += py-selectors34
     SUBDIR += py-semantic_version
+    SUBDIR += py-semver
     SUBDIR += py-serializable
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
@@ -6065,6 +6076,7 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
+    SUBDIR += snorenotify
     SUBDIR += soapui
     SUBDIR += socket_wrapper
     SUBDIR += sonar-ant-task
@@ -6180,6 +6192,7 @@
     SUBDIR += trac-bitten
     SUBDIR += tradcpp
     SUBDIR += treepy.el
+    SUBDIR += trellis
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += ua_parser-core
