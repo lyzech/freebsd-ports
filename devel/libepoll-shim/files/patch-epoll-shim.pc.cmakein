@@ -1,0 +1,8 @@
+--- epoll-shim.pc.cmakein.orig	2019-06-22 21:57:44 UTC
++++ epoll-shim.pc.cmakein
+@@ -9,4 +9,4 @@ Description: Small epoll implementation using kqueue
+ Version: 
+ Libs: -L${libdir} -lepoll-shim
+ Libs.private: -pthread -lrt
+-Cflags: -I${includedir}/libepoll-shim
++Cflags: -I${includedir}
