@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
-GH_TAGNAME=	fbe5a0b
+GH_TAGNAME=	8efdba3cd5d28dcd4dc847995670d7e2b4392b21
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
