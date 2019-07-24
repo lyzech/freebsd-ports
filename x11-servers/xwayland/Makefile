@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	xwayland
-PORTVERSION=	1.19.1
+PORTVERSION=	1.20.5
 # This is inherited from x11-servers/xorg-server
 # Ensure it does not go backwards when bumping
-PORTREVISION=	11
+PORTREVISION=	0
 
 COMMENT=	X Clients under Wayland
 
@@ -31,17 +31,6 @@ CONFIGURE_ARGS+=	--disable-docs --disable-devel-docs \
 			--disable-xquartz --disable-xwin
 
 PLIST_FILES=	bin/Xwayland
-
-EXTRA_PATCHES=	${MASTERDIR}/files/patch-CVE-2017-12176 \
-		${MASTERDIR}/files/patch-CVE-2017-12177 \
-		${MASTERDIR}/files/patch-CVE-2017-12178 \
-		${MASTERDIR}/files/patch-CVE-2017-12179 \
-		${MASTERDIR}/files/patch-CVE-2017-12183 \
-		${MASTERDIR}/files/patch-CVE-2017-1218x \
-		${MASTERDIR}/files/patch-CVE-2017-1218y \
-		${MASTERDIR}/files/patch-CVE-2017-13721 \
-		${MASTERDIR}/files/patch-CVE-2017-13723 \
-		${MASTERDIR}/files/patch-os_io.c
 
 do-install:
 	cd ${WRKSRC}/hw/xwayland; DESTDIR=${STAGEDIR} ${MAKE_CMD} install
