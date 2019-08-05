@@ -1,7 +1,7 @@
 Based on
 https://github.com/freebsd/poudriere/pull/554
 
---- src/share/poudriere/bulk.sh.orig	2019-03-11 16:30:03 UTC
+--- src/share/poudriere/bulk.sh.orig	2019-08-03 17:40:19 UTC
 +++ src/share/poudriere/bulk.sh
 @@ -58,6 +58,7 @@ Options:
      -p tree     -- Specify on which ports tree the bulk build will be done
@@ -30,9 +30,9 @@ https://github.com/freebsd/poudriere/pull/554
  			;;
  		S)
  			SKIP_RECURSIVE_REBUILD=1
---- src/share/poudriere/common.sh.orig	2019-03-11 16:30:03 UTC
+--- src/share/poudriere/common.sh.orig	2019-08-03 17:40:19 UTC
 +++ src/share/poudriere/common.sh
-@@ -1645,7 +1645,7 @@ enter_interactive() {
+@@ -1678,7 +1678,7 @@ enter_interactive() {
  		ensure_pkg_installed force_extract || \
  		    err 1 "Unable to extract pkg."
  		# Install the selected pkg package
@@ -41,24 +41,24 @@ https://github.com/freebsd/poudriere/pull/554
  		    /usr/bin/make -C \
  		    ${PORTSDIR}/$(injail /usr/bin/make \
  		    -f ${PORTSDIR}/Mk/bsd.port.mk -V PKGNG_ORIGIN) \
-@@ -1663,14 +1663,14 @@ enter_interactive() {
+@@ -1696,14 +1696,14 @@ enter_interactive() {
  		originspec_decode "${originspec}" port dep_args flavor
  		# Install run-depends since this is an interactive test
- 		msg "Installing run-depends for ${COLOR_PORT}${port} | ${pkgname}"
+ 		msg "Installing run-depends for ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
 -		injail env USE_PACKAGE_DEPENDS_ONLY=1 \
 +		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes \
  		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
  		    ${flavor:+FLAVOR=${flavor}} run-depends ||
- 		    msg_warn "Failed to install ${COLOR_PORT}${port} | ${pkgname}${COLOR_RESET} run-depends"
- 		msg "Installing ${COLOR_PORT}${port} | ${pkgname}"
+ 		    msg_warn "Failed to install ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}${COLOR_RESET} run-depends"
+ 		msg "Installing ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
  		# Only use PKGENV during install as testport will store
  		# the package in a different place than dependencies
 -		injail env USE_PACKAGE_DEPENDS_ONLY=1 ${PKGENV} \
 +		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes ${PKGENV} \
  		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
  		    ${flavor:+FLAVOR=${flavor}} install-package ||
- 		    msg_warn "Failed to install ${COLOR_PORT}${port} | ${pkgname}"
-@@ -3201,7 +3201,7 @@ build_port() {
+ 		    msg_warn "Failed to install ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
+@@ -3237,7 +3237,7 @@ build_port() {
  
  		if [ "${phase#*-}" = "depends" ]; then
  			# No need for nohang or PORT_FLAGS for *-depends
@@ -67,7 +67,7 @@ https://github.com/freebsd/poudriere/pull/554
  			    /usr/bin/make -C ${portdir} ${MAKE_ARGS} \
  			    ${phase} || return 1
  		else
-@@ -7178,6 +7178,10 @@ prepare_ports() {
+@@ -7306,6 +7306,10 @@ prepare_ports() {
  
  	clean_build_queue
  
@@ -78,7 +78,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7298,6 +7302,67 @@ load_priorities() {
+@@ -7432,6 +7436,67 @@ load_priorities() {
  	return 0
  }
  
@@ -146,7 +146,7 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -7821,6 +7886,8 @@ DRY_RUN=0
+@@ -7956,6 +8021,8 @@ DRY_RUN=0
  : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
  
  : ${HTML_TYPE:=inline}
