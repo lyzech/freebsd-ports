@@ -132,7 +132,7 @@ https://github.com/freebsd/poudriere/pull/554
 +	i=0
 +	while ! ${pkg_cmd} fetch -r "${repo}" -y -o "${PACKAGES}" ${pkgs}; do
 +		i=$((i + 1))
-+		if [ $i -ge 20 ]; then
++		if [ $i -ge 200 ]; then
 +			err 1 "pkg fetch failed"
 +		fi
 +	done
