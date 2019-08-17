@@ -143,6 +143,7 @@
     SUBDIR += drm-fbsd12.0-kmod
     SUBDIR += drm-kmod
     SUBDIR += drm-legacy-kmod
+    SUBDIR += drm_info
     SUBDIR += dspdfviewer
     SUBDIR += duhdraw
     SUBDIR += dynamechs
@@ -378,6 +379,7 @@
     SUBDIR += jhead
     SUBDIR += jogamp-jogl
     SUBDIR += jogl
+    SUBDIR += jp
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
@@ -867,6 +869,7 @@
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
     SUBDIR += py-pyembree
+    SUBDIR += py-pyepsg
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
     SUBDIR += py-pyglet
@@ -1005,6 +1008,7 @@
     SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svgalib
+    SUBDIR += svgbob
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools

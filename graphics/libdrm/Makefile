@@ -5,7 +5,7 @@ PORTNAME=	libdrm
 PORTVERSION=	2.4.99
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
-MASTER_SITES=	http://dri.freedesktop.org/libdrm/
+MASTER_SITES=	https://dri.freedesktop.org/libdrm/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
@@ -43,7 +43,7 @@ PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER=""
 PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == powerpc || ${ARCH} == powerpc64
+.elif ${ARCH:Mpowerpc*}
 PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER=""
@@ -53,7 +53,7 @@ PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == armv6 || ${ARCH} == armv7
+.elif ${ARCH:Marm*}
 PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER="@comment "

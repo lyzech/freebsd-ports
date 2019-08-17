@@ -43,7 +43,6 @@
     SUBDIR += antiword
     SUBDIR += apache-poi
     SUBDIR += apache-solr
-    SUBDIR += apache-solr3
     SUBDIR += apertium
     SUBDIR += archmage
     SUBDIR += artha
@@ -222,6 +221,7 @@
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnugrep
+    SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += google-translate-cli
     SUBDIR += gpp
@@ -731,6 +731,7 @@
     SUBDIR += p5-Search-Elasticsearch-Client-0_90
     SUBDIR += p5-Search-Elasticsearch-Client-1_0
     SUBDIR += p5-Search-Elasticsearch-Client-2_0
+    SUBDIR += p5-Search-Elasticsearch-Client-5_0
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
     SUBDIR += p5-Search-QueryParser
@@ -866,6 +867,7 @@
     SUBDIR += p5-Text-Hatena
     SUBDIR += p5-Text-Highlight
     SUBDIR += p5-Text-HikiDoc
+    SUBDIR += p5-Text-Hogan
     SUBDIR += p5-Text-Hyphen
     SUBDIR += p5-Text-LTSV
     SUBDIR += p5-Text-Language-Guess
@@ -1110,6 +1112,7 @@
     SUBDIR += p5-XML-XQL
     SUBDIR += p5-XML-XSLT
     SUBDIR += p5-XML-XUpdate-LibXML
+    SUBDIR += p5-XString
     SUBDIR += p5-YAML
     SUBDIR += p5-YAML-LibYAML
     SUBDIR += p5-YAML-PP
@@ -1302,6 +1305,7 @@
     SUBDIR += py-nltk
     SUBDIR += py-normality
     SUBDIR += py-numpydoc
+    SUBDIR += py-ocrmypdf
     SUBDIR += py-openpyxl
     SUBDIR += py-openpyxl24
     SUBDIR += py-openstackdocstheme
@@ -1417,6 +1421,7 @@
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
     SUBDIR += py-xml-default-dict
+    SUBDIR += py-xmldiff
     SUBDIR += py-yapf
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales
@@ -1663,7 +1668,6 @@
     SUBDIR += scdoc
     SUBDIR += scew
     SUBDIR += scim
-    SUBDIR += scim-bridge
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-imengine
     SUBDIR += scim-m17n
@@ -1704,7 +1708,6 @@
     SUBDIR += sowing
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
-    SUBDIR += sphinxsearch-devel
     SUBDIR += spiff
     SUBDIR += splitpatch
     SUBDIR += sq-hunspell

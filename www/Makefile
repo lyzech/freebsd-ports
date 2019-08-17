@@ -33,7 +33,6 @@
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
-    SUBDIR += august
     SUBDIR += awffull
     SUBDIR += aws
     SUBDIR += aws-demos
@@ -79,6 +78,7 @@
     SUBDIR += cherokee
     SUBDIR += choqok
     SUBDIR += chpasswd
+    SUBDIR += chrome-gnome-shell
     SUBDIR += chromium
     SUBDIR += ckeditor
     SUBDIR += cl-lml
@@ -503,6 +503,7 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
+    SUBDIR += ot-recorder
     SUBDIR += otrs
     SUBDIR += otter-browser
     SUBDIR += owncloud
@@ -1308,7 +1309,6 @@
     SUBDIR += p5-WebService-Linode
     SUBDIR += p5-WebService-MoviePosterDB
     SUBDIR += p5-WebService-MusicBrainz
-    SUBDIR += p5-WebService-MusicBrainz0
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Pushover
     SUBDIR += p5-WebService-Rakuten
@@ -1507,6 +1507,7 @@
     SUBDIR += py-dj22-django-treebeard
     SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-dj22-drf-yasg
+    SUBDIR += py-dj22-swapper
     SUBDIR += py-django
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annotations
@@ -1560,6 +1561,7 @@
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-model-utils
     SUBDIR += py-django-modelcluster
+    SUBDIR += py-django-modelcluster4
     SUBDIR += py-django-modern-rpc
     SUBDIR += py-django-mptt
     SUBDIR += py-django-netfields
@@ -1696,6 +1698,7 @@
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
     SUBDIR += py-kallithea
+    SUBDIR += py-lektor
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
     SUBDIR += py-livereload
@@ -1952,12 +1955,14 @@
     SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-addressable23
+    SUBDIR += rubygem-addressable25
     SUBDIR += rubygem-adsf
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-asana
     SUBDIR += rubygem-async_sinatra
+    SUBDIR += rubygem-atlassian-jwt
     SUBDIR += rubygem-best_in_place
     SUBDIR += rubygem-best_in_place-rails5
     SUBDIR += rubygem-bluecloth
@@ -1968,6 +1973,7 @@
     SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
+    SUBDIR += rubygem-chromedriver-helper
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cuba
@@ -2030,6 +2036,7 @@
     SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-http-form_data
     SUBDIR += rubygem-http_router
+    SUBDIR += rubygem-http3
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-httpi
@@ -2181,8 +2188,6 @@
     SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
-    SUBDIR += rubygem-turbolinks-rails5
-    SUBDIR += rubygem-turbolinks-rails50
     SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
@@ -2194,6 +2199,7 @@
     SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
+    SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webpack-rails-rails5
     SUBDIR += rubygem-webrobots
@@ -2221,6 +2227,7 @@
     SUBDIR += sitecopy
     SUBDIR += skytemplate
     SUBDIR += slowcgi
+    SUBDIR += slowhttptest
     SUBDIR += smarty2
     SUBDIR += smarty3
     SUBDIR += smb_auth
@@ -2418,7 +2425,6 @@
     SUBDIR += webhook
     SUBDIR += webinject
     SUBDIR += webkit2-gtk3
-    SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webpy
     SUBDIR += webreport
