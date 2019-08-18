@@ -7,6 +7,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Mailbox flag for X
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	app
 USE_XORG=	xbitmaps xext xaw
 PLIST_FILES=	bin/xbiff man/man1/xbiff.1.gz
