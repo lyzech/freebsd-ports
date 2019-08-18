@@ -8,6 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Very useful utility for configuring and testing XInput devices
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	app
 USE_XORG=	xorgproto x11 xi xext xrandr xinerama
 
