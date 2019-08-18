@@ -8,6 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Manual page display program for X
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	app
 USE_XORG=	x11 xt xaw
