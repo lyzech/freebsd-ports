@@ -9,7 +9,11 @@ COMMENT=	Window information utility for X
 
 XORG_CAT=	app
 USES=		iconv
-USE_XORG=	x11 xcb xorgproto xorg-macros
+USE_XORG=	x11 xcb xorgproto
+
+LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
+
+CONFIGURE_ARGS=	--with-xcb-icccm
 
 PLIST_FILES=	bin/xwininfo man/man1/xwininfo.1.gz
 
