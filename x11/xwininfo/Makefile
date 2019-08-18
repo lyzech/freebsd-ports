@@ -7,6 +7,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Window information utility for X
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	app
 USES=		iconv
 USE_XORG=	x11 xcb xorgproto
