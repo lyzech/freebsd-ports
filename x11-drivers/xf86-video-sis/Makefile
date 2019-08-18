@@ -7,6 +7,10 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org sis display driver
 
+LICENSE=	BSD3CLAUSE MIT
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	driver
 
 .include <bsd.port.mk>
