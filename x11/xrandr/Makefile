@@ -8,6 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Primitive command line interface to the RandR extension
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:xz
 XORG_CAT=	app
