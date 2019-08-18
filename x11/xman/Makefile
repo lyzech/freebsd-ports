@@ -10,6 +10,6 @@ COMMENT=	Manual page display program for X
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xp xprintutil
+USE_XORG=	x11 xt xaw
 
 .include <bsd.port.mk>
