@@ -4,13 +4,13 @@
      goto err;
    }
    s->context = context;
--  s->hdl = sio_open(NULL, s->mode, 1);
+-  s->hdl = WRAP(sio_open)(NULL, s->mode, 1);
 +  const char *dev = NULL;
 +  if (s->mode == SIO_PLAY)
 +    dev = getenv("PLAY_AUDIODEVICE");
 +  else if (s->mode == SIO_REC)
 +    dev = getenv("REC_AUDIODEVICE");
-+  s->hdl = sio_open(dev, s->mode, 1);
++  s->hdl = WRAP(sio_open)(dev, s->mode, 1);
    if (s->hdl == NULL) {
      DPR("sndio_stream_init(), sio_open() failed\n");
      goto err;
