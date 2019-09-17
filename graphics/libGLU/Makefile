@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libGLU
-PORTVERSION=	9.0.0
-PORTREVISION=	3
+PORTVERSION=	9.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/glu/
 DISTNAME=	glu-${PORTVERSION}
@@ -14,7 +13,7 @@ COMMENT=	OpenGL utility library
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool pathfix pkgconfig tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
