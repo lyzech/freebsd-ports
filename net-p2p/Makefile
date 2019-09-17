@@ -42,6 +42,7 @@
     SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
+    SUBDIR += lidarr
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
@@ -92,5 +93,7 @@
     SUBDIR += vuze
     SUBDIR += xmrig
     SUBDIR += zetacoin
+    SUBDIR += zetacoin-daemon
+    SUBDIR += zetacoin-utils
 
 .include <bsd.port.subdir.mk>

@@ -15,6 +15,8 @@ COMMENT=	Powerful syslogd replacement
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
+DEPRECATED=	Agreed upon upstream six month deprecation policy
+EXPIRATION_DATE=	2020-03-03
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
@@ -200,6 +202,9 @@ BROKEN=		Default configuration does not currently support non-JSON builds
 post-patch:
 	@${CP} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 	@${CP} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
+
+post-patch-JAVA_MOD-on:
+	@${REINPLACE_CMD} 's,$$(GRADLE),& --no-daemon,g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

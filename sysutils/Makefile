@@ -104,6 +104,7 @@
     SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
+    SUBDIR += bibelot
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
@@ -352,7 +353,6 @@
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
-    SUBDIR += freefilesync
     SUBDIR += freeipmi
     SUBDIR += freesbie
     SUBDIR += froxlor
@@ -433,6 +433,7 @@
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome_subr
+    SUBDIR += go-wtf
     SUBDIR += goaccess
     SUBDIR += goawk
     SUBDIR += gomplate
@@ -499,6 +500,7 @@
     SUBDIR += intel-pcm-devel
     SUBDIR += intel-qcu
     SUBDIR += intel-undervolt
+    SUBDIR += ioc
     SUBDIR += iocage
     SUBDIR += iocage-devel
     SUBDIR += iocell
@@ -580,7 +582,6 @@
     SUBDIR += libsunacl
     SUBDIR += libsysstat
     SUBDIR += liburcu
-    SUBDIR += libutempter
     SUBDIR += life-preserver
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-xosdplugin
@@ -599,7 +600,6 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += lockfile-progs
-    SUBDIR += log-courier
     SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logstalgia
@@ -630,6 +630,7 @@
     SUBDIR += mac_nonet
     SUBDIR += mac_rtprio
     SUBDIR += magicrescue
+    SUBDIR += makeztxt
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += mapdir
@@ -1304,11 +1305,7 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng310
     SUBDIR += syslog-ng311
-    SUBDIR += syslog-ng312
-    SUBDIR += syslog-ng313
-    SUBDIR += syslog-ng314
     SUBDIR += syslog-ng315
     SUBDIR += syslog-ng317
     SUBDIR += syslog-ng318
@@ -1316,7 +1313,7 @@
     SUBDIR += syslog-ng320
     SUBDIR += syslog-ng321
     SUBDIR += syslog-ng322
-    SUBDIR += syslog-ng39
+    SUBDIR += syslog-ng323
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
@@ -1333,6 +1330,7 @@
     SUBDIR += tenshi
     SUBDIR += tentakel
     SUBDIR += terraform
+    SUBDIR += terraform-provider-vultr
     SUBDIR += testdisk
     SUBDIR += thefish
     SUBDIR += timelimit
@@ -1426,6 +1424,7 @@
     SUBDIR += uefi-edk2-bhyve-csm
     SUBDIR += uefi-edk2-bhyve-devel
     SUBDIR += uefi-edk2-qemu
+    SUBDIR += ufetch
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
