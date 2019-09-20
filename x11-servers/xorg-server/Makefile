@@ -17,7 +17,6 @@ LICENSE=	MIT
 RUN_DEPENDS+=	xkeyboard-config>=2.5:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
-XORG_CAT=	xserver
 SLAVE_PORT?=	no
 
 OPTIONS_SUB=	yes
@@ -45,7 +44,7 @@ UDEV_CONFIGURE_ENABLE=	config-udev
 UDEV_CONFIGURE_ON=	--disable-config-udev-kms
 UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=		gmake perl5 ssl
+USES=		gl gmake perl5 ssl xorg-cat:xserver xorg
 USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
