@@ -20,7 +20,7 @@ RUN_DEPENDS+=	xkeyboard-config>=2.5:x11/xkeyboard-config \
 SLAVE_PORT?=	no
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	SUID FIXDRM
+OPTIONS_DEFINE=	SUID
 OPTIONS_RADIO=	CONF
 OPTIONS_RADIO_CONF=	DEVD HAL UDEV
 OPTIONS_DEFAULT=	DEVD SUID
@@ -30,7 +30,6 @@ CONF_DESC=	Backend to use for input device configuration
 DEVD_DESC=	Use devd (native)
 HAL_DESC=	Use HAL (deprecated)
 UDEV_DESC=	Use udev via libudev-devd (experimental)
-FIXDRM_DESC=	Enable glamor workaround for drm-devel-kmod bug
 
 OPTIONS_EXCLUDE_sparc64=	HAL
 
@@ -68,7 +67,7 @@ CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
 SUB_FILES=	pkg-install pkg-deinstall
 .else
 CONFIGURE_ARGS+=	--disable-xorg
-OPTIONS_EXCLUDE=	DEVD HAL UDEV SUID FIXDRM
+OPTIONS_EXCLUDE=	DEVD HAL UDEV SUID
 # Set PLIST for slave ports so they only need to set PLIST_FILES
 PLIST=		${.CURDIR}/pkg-plist
 .endif
@@ -91,12 +90,6 @@ PLIST_SUB+=	SPARC64=""
 .else
 PLIST_SUB+=	SPARC64="@comment "
 .endif
-
-post-patch-FIXDRM-on:
-# Workaround glamor lockups when drm-devel-kmod (4.15-4.17) is installed
-# with partial reverting of commit 86b2d8740a330deafe8a9bbf0402705a43efbb42
-	@${REINPLACE_CMD} '/glamor_make_pixmap_exportable/ s/FALSE/TRUE/' \
-		${WRKSRC}/glamor/glamor_egl.c
 
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
