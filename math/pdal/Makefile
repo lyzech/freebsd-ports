@@ -3,6 +3,7 @@
 
 PORTNAME=	pdal
 DISTVERSION=	1.9.1
+PORTREVISION=	3
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -25,9 +26,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${GH_ACCOUNT}
-
-# Unhide std::to_string() to fix build with GCC (see ports/193528 for details).
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 CMAKE_ON=	WITH_LASZIP #LASZIP is recommended
 

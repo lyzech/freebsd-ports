@@ -5,13 +5,13 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11
 CATEGORIES=	devel
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Fast, powerful and easy-to-use CLI for AWS
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wallix

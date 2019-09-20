@@ -2,7 +2,7 @@
 
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
@@ -12,8 +12,6 @@ COMMENT=	Alternative DHCP implementation by ISC
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_powerpc64=	fails to configure: checking for log4cplus library... no
 
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs

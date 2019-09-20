@@ -51,6 +51,7 @@
     SUBDIR += graphlan
     SUBDIR += grappa
     SUBDIR += groopm
+    SUBDIR += haplohseq
     SUBDIR += hhsuite
     SUBDIR += hisat2
     SUBDIR += hmmer
@@ -65,6 +66,7 @@
     SUBDIR += kallisto
     SUBDIR += lagan
     SUBDIR += lamarc
+    SUBDIR += libbigwig
     SUBDIR += libgtextutils
     SUBDIR += libsbml
     SUBDIR += linux-foldingathome
@@ -155,6 +157,7 @@
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tabixpp
+    SUBDIR += treekin
     SUBDIR += treepuzzle
     SUBDIR += trimadap
     SUBDIR += trimmomatic
@@ -163,6 +166,7 @@
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
+    SUBDIR += viennarna
     SUBDIR += vsearch
     SUBDIR += wise
 

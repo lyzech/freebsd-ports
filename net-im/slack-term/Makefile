@@ -5,13 +5,13 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
 CATEGORIES=	net-im
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Slack client for your terminal
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	erroneousboat
