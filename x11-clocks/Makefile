@@ -46,7 +46,8 @@
     SUBDIR += xclock
     SUBDIR += xdaliclock
     SUBDIR += xfce4-datetime-plugin
-    SUBDIR += xfce4-timer-out-plugin
+    SUBDIR += xfce4-stopwatch-plugin
+    SUBDIR += xfce4-time-out-plugin
     SUBDIR += xfce4-timer-plugin
     SUBDIR += xtimer
 

@@ -670,6 +670,7 @@
     SUBDIR += openclaw
     SUBDIR += openclonk
     SUBDIR += opendungeons
+    SUBDIR += openfodder
     SUBDIR += opengfx
     SUBDIR += openglad
     SUBDIR += openjazz
@@ -944,6 +945,7 @@
     SUBDIR += tkmoo
     SUBDIR += tomatoes
     SUBDIR += tome4
+    SUBDIR += tome4-beta
     SUBDIR += tomenet
     SUBDIR += tong
     SUBDIR += toppler

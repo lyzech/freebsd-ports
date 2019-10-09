@@ -3,7 +3,7 @@
 
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.7
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.tcptrace.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,6 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace
