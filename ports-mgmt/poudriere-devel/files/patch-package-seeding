@@ -67,7 +67,26 @@ https://github.com/freebsd/poudriere/pull/554
  	fi
  	targets="check-sanity pkg-depends fetch-depends fetch checksum \
  		  extract-depends extract patch-depends patch build-depends \
-@@ -3243,11 +3243,17 @@ build_port() {
+@@ -3219,6 +3219,18 @@ build_port() {
+ 				    grep NEEDED | sort -u
+ 			fi
+ 			;;
++		test)
++			for jpkg in ${ALLOW_NETWORKING_PACKAGES_TEST}; do
++				case "${pkgname%-*}" in
++				${jpkg})
++					job_msg_warn "ALLOW_NETWORKING_PACKAGES_TEST: Allowing full network access during tests for ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}${COLOR_RESET}"
++					msg_warn "ALLOW_NETWORKING_PACKAGES_TEST: Allowing full network access during tests for ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}${COLOR_RESET}"
++					JNETNAME="n"
++					break
++					;;
++				esac
++			done
++    			;;
+ 		esac
+ 
+ 		print_phase_header ${phase}
+@@ -3243,11 +3255,17 @@ build_port() {
  			export GID=${PORTBUILD_UID}
  		fi
  
@@ -87,7 +106,7 @@ https://github.com/freebsd/poudriere/pull/554
  		else
  			# Only set PKGENV during 'package' to prevent
  			# testport-built packages from going into the main repo
-@@ -4454,6 +4460,7 @@ deps_fetch_vars() {
+@@ -4454,6 +4472,7 @@ deps_fetch_vars() {
  		[ -n "${_origin_flavor}" ] && \
  		    err 1 "deps_fetch_vars: Using DEPENDS_ARGS but attempted lookup on ${originspec}"
  	fi
@@ -95,7 +114,7 @@ https://github.com/freebsd/poudriere/pull/554
  	if ! port_var_fetch_originspec "${originspec}" \
  	    PKGNAME _pkgname \
  	    ${_depends_args} \
-@@ -4463,13 +4470,29 @@ deps_fetch_vars() {
+@@ -4463,13 +4482,29 @@ deps_fetch_vars() {
  	    IGNORE _ignore \
  	    ${_changed_deps} \
  	    ${_changed_options} \
@@ -126,7 +145,7 @@ https://github.com/freebsd/poudriere/pull/554
  	[ -n "${_pkgname}" ] || \
  	    err 1 "deps_fetch_vars: failed to get PKGNAME for ${originspec}"
  
-@@ -7320,6 +7343,10 @@ prepare_ports() {
+@@ -7320,6 +7355,10 @@ prepare_ports() {
  
  	clean_build_queue
  
@@ -137,7 +156,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7446,6 +7473,67 @@ load_priorities() {
+@@ -7446,6 +7485,67 @@ load_priorities() {
  	return 0
  }
  
@@ -205,7 +224,7 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -7971,6 +8059,8 @@ DRY_RUN=0
+@@ -7971,6 +8071,8 @@ DRY_RUN=0
  : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
  
  : ${HTML_TYPE:=inline}
