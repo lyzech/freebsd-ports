@@ -13231,7 +13231,6 @@ japanese/skkfep||2019-10-16|Has expired: Unfetchable, unmaintained
 java/eclipse-log4e||2019-10-16|Has expired: Unfetchable, unmaintained
 java/eclipse-lomboz||2019-10-16|Has expired: Unfetchable, unmaintained
 java/java-checkstyle||2019-10-16|Has expired: Unfetchable, unmaintained
-korean/baekmukfonts-ttf||2019-10-16|Has expired: Unfetchable, unmaintained
 korean/gtkcomm||2019-10-16|Has expired: Unfetchable, unmaintained
 lang/arena||2019-10-16|Has expired: Unfetchable, unmaintained
 lang/diveintopython||2019-10-16|Has expired: Unfetchable, unmaintained
@@ -13413,3 +13412,6 @@ x11-wm/musca||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/weewm||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/windowlab||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/wmfs||2019-10-16|Has expired: Unfetchable, unmaintained
+x11-wm/plank|x11/plank|2019-10-17|Port incorrectly labeled as Windows Manager, is an independent dock application.
+net/kcontacts|net/kf5-kcontacts|2019-10-17|Became a KDE Framework
+net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework
