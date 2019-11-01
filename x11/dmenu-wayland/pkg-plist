@@ -1,0 +1,4 @@
+bin/dmenu-wl
+bin/dmenu-wl_path
+bin/dmenu-wl_run
+man/man1/dmenu-wl.1.gz
