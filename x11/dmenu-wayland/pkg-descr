@@ -2,3 +2,5 @@ dmenu-wl is an efficient dynamic menu for wayland (wlroots).
 Requires a compositor which implements wlr-layer-shell and xdg-output
 protocols. Basically this means a wlroots-based compositor is needed.
 Tested with sway 1.0.
+
+WWW: https://github.com/nyyManni/dmenu-wayland
