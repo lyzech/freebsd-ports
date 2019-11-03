@@ -15,8 +15,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libgirara-gtk3.so:x11-toolkits/girara \
-		libsynctex.so:devel/tex-synctex
+		libgirara-gtk3.so:x11-toolkits/girara
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
