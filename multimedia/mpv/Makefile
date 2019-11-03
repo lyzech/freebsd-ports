@@ -174,6 +174,10 @@ ZSH_CONFIGURE_ENABLE=		zsh-comp
 .if ${PORT_OPTIONS:MVAAPI} && ${PORT_OPTIONS:MWAYLAND}
 CONFIGURE_ARGS+=	--enable-vaapi-wayland
 LIB_DEPENDS+=		libva-wayland.so:multimedia/libva
+.if !${PORT_OPTIONS:MOPENGL}
+USES+=			gl
+USE_GL=			egl
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-vaapi-wayland
 .endif
