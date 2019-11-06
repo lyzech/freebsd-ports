@@ -11,6 +11,8 @@ LICENSE_NAME_UNRAR=	unRAR usage restriction license
 LICENSE_FILE_UNRAR=	${WRKSRC}/DOC/unRarLicense.txt
 LICENSE_PERMS_UNRAR=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
+RUN_DEPENDS=	p7zip>0:archivers/p7zip
+
 MASTERDIR=	${.CURDIR}/../p7zip
 ALL_TARGET=	common7z
 DESCR=		${.CURDIR}/pkg-descr
