@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
 COMMENT=	Collection of Firmware for bhyve
 
-RUN_DEPENDS=	uefi-edk2-bhyve>=0:sysutils/uefi-edk2-bhyve
+RUN_DEPENDS=	uefi-edk2-bhyve-devel>=0:sysutils/uefi-edk2-bhyve-devel
 
 USES=			metaport
 OPTIONS_DEFINE=		CSM
