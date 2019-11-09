@@ -800,6 +800,7 @@
     SUBDIR += git-codereview
     SUBDIR += git-cola
     SUBDIR += git-cvs
+    SUBDIR += git-delta
     SUBDIR += git-extras
     SUBDIR += git-gui
     SUBDIR += git-lfs
@@ -4451,6 +4452,7 @@
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-freebsd-sysctl
     SUBDIR += py-freenas.dispatcher
     SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
@@ -4553,6 +4555,7 @@
     SUBDIR += py-isort
     SUBDIR += py-iterpipes
     SUBDIR += py-itypes
+    SUBDIR += py-jail
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
@@ -6040,6 +6043,7 @@
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-numerizer01
     SUBDIR += rubygem-octopress-hooks
+    SUBDIR += rubygem-oci
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omniauth_crowd22
