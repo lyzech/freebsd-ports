@@ -18,6 +18,7 @@ BUILD_DEPENDS=	googletest>0:devel/googletest \
 		${LOCALBASE}/include/cereal/access.hpp:devel/cereal
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libnlopt.so:math/nlopt \
 		libtbb.so:devel/tbb
 USE_GL=		glew
 
