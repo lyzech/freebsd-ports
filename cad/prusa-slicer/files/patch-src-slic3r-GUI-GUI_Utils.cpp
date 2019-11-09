@@ -1,6 +1,15 @@
---- src/slic3r/GUI/GUI_Utils.cpp.orig	2019-10-20 13:12:51.325192000 +0200
-+++ src/slic3r/GUI/GUI_Utils.cpp	2019-10-20 13:11:48.848520000 +0200
-@@ -106,7 +106,7 @@
+--- src/slic3r/GUI/GUI_Utils.cpp.orig	2019-11-09 15:22:29 UTC
++++ src/slic3r/GUI/GUI_Utils.cpp
+@@ -40,7 +40,7 @@ void on_window_geometry(wxTopLevelWindow *tlw, std::fu
+     // cf. https://groups.google.com/forum/#!topic/wx-users/c7ntMt6piRI
+     // OTOH the geometry is available very soon, so we can call the callback right away
+     callback();
+-#elif defined __linux__
++#elif defined __linux__ || defined __FreeBSD__
+     tlw->Bind(wxEVT_SHOW, [=](wxShowEvent &evt) {
+         // On Linux, the geometry is only available after wxEVT_SHOW + CallAfter
+         // cf. https://groups.google.com/forum/?pli=1#!topic/wx-users/fERSXdpVwAI
+@@ -106,7 +106,7 @@ int get_dpi_for_window(wxWindow *window)
          if (hdc == NULL) { return DPI_DEFAULT; }
          return GetDeviceCaps(hdc, LOGPIXELSX);
      }

@@ -1,6 +1,6 @@
---- src/avrdude/libavrdude.h.orig	2019-10-20 11:27:31.526559000 +0200
-+++ src/avrdude/libavrdude.h	2019-10-20 11:30:31.340704000 +0200
-@@ -950,7 +950,7 @@
+--- src/avrdude/libavrdude.h.orig	2019-09-16 08:49:51 UTC
++++ src/avrdude/libavrdude.h
+@@ -950,7 +950,7 @@ int read_config_builtin();
  // Header file for alloca()
  #if defined(WIN32NATIVE)
  #  include <malloc.h>
