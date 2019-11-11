@@ -28,7 +28,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 RUN_DEPENDS+=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		at-spi2-atk>=0:accessibility/at-spi2-atk \
-		librsvg2>=0:graphics/librsvg2
+		${LIBRSVG2_DEFAULT}>=0:graphics/${LIBRSVG2_DEFAULT}
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
