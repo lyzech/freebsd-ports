@@ -208,6 +208,7 @@
     SUBDIR += lxqt-globalkeys
     SUBDIR += lxqt-runner
     SUBDIR += lxrandr
+    SUBDIR += ly
     SUBDIR += mate
     SUBDIR += mate-applets
     SUBDIR += mate-base
