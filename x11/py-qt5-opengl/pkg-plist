@@ -1,5 +1,8 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtOpenGL.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtOpenGL.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtOpenGL.so
+%%PYTHON_SITELIBDIR%%/PyQt5/_QOpenGLFunctions_2_0.so
+%%PYTHON_SITELIBDIR%%/PyQt5/_QOpenGLFunctions_2_1.so
+%%PYTHON_SITELIBDIR%%/PyQt5/_QOpenGLFunctions_4_1_Core.so
+%%PYQT_APIDIR%%/api/python/QtOpenGL.api
 %%PYQT_SIPDIR%%/QtOpenGL/QtOpenGLmod.sip
 %%PYQT_SIPDIR%%/QtOpenGL/qgl.sip
-%%API%%%%PYQT_APIDIR%%/api/python/QtOpenGL.api
