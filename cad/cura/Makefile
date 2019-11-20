@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cura
-PORTVERSION=	4.4.0
+PORTVERSION=	${CURAVERSION}
 CATEGORIES=	cad
-DISTVERSIONPREFIX=	v
 
 COMMENT=	C++ implementation of 3mf loading
 
