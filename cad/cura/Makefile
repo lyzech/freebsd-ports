@@ -11,7 +11,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${CURA_GH_ACCOUNT}
 GH_PROJECT=	Cura
 
-GH_TUPLE=	Ultimaker:Uranium:4.3.0:uranium
+GH_TUPLE=	Ultimaker:Uranium:${CURAVERSION}:uranium
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uranium>0:devel/py-uranium@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}savitar>0:cad/py-savitar@${PY_FLAVOR} \
