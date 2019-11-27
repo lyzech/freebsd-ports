@@ -1,9 +1,8 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
+# $FreeBSD: head/emulators/virtualbox-ose-additions/Makefile 511620 2019-09-09 11:01:13Z tobik $
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.34
-PORTREVISION=	1
+PORTVERSION=	6.0.12
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -16,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		compiler:c++11-lang cpe iconv kmod tar:bzip2
+USES=		compiler:c++11-lang cpe iconv kmod python:build tar:bzip2
 USE_RC_SUBR=	vboxguest vboxservice
 
 BUILD_DEPENDS=	yasm:devel/yasm \
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
+DISTINFO_FILE=	${.CURDIR}/../${PORTNAME}/distinfo
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
@@ -61,11 +61,11 @@ DEBUG_VARS_OFF=		KMK_BUILDTYPE=release
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_IMPLIES=		X11
 OPENGL_USE=		GL=gl,glu XORG=xcomposite,xdamage,xfixes
-OPENGL_USES=		gl python:2.7,build xorg
+OPENGL_USES=		gl
 X11_BUILD_DEPENDS=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
 X11_RUN_DEPENDS=	xrandr:x11/xrandr
 X11_USE=		XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
-X11_USES=		pkgconfig xorg
+X11_USES=		pkgconfig
 X11_VARS=		VBOX_WITH_X11=1
 
 .include <bsd.port.options.mk>
@@ -103,9 +103,6 @@ VBOX_WITH_X11=
 
 .if ${COMPILER_TYPE} == clang
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk
-.if ${COMPILER_FEATURES:Mlibc++}
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
-.endif
 .endif
 
 post-patch:

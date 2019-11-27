@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD$
+# $FreeBSD: head/emulators/virtualbox-ose/files/vboxwebsrv.in 379144 2015-02-17 07:07:01Z jkim $
 #
 # PROVIDE: vboxwebsrv
 # REQUIRE: LOGIN
