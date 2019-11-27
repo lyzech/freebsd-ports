@@ -1,4 +1,4 @@
-# $FreeBSD: head/emulators/virtualbox-ose-additions-nox11/Makefile 501807 2019-05-16 22:16:06Z jkim $
+# $FreeBSD$
 
 PKGNAMESUFFIX=	-additions-nox11
 
