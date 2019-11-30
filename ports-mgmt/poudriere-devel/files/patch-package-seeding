@@ -157,7 +157,21 @@ https://github.com/freebsd/poudriere/pull/554
  	[ -n "${_pkgname}" ] || \
  	    err 1 "deps_fetch_vars: failed to get PKGNAME for ${originspec}"
  
-@@ -7320,6 +7358,10 @@ prepare_ports() {
+@@ -7180,13 +7218,6 @@ prepare_ports() {
+ 
+ 	bset status "sanity:"
+ 
+-	if [ -f ${PACKAGES}/.jailversion ]; then
+-		if [ "$(cat ${PACKAGES}/.jailversion)" != \
+-		    "$(jget ${JAILNAME} version)" ]; then
+-			JAIL_NEEDS_CLEAN=1
+-		fi
+-	fi
+-
+ 	if was_a_bulk_run; then
+ 		# Stash dependency graph
+ 		cp -f "${MASTERMNT}/.p/pkg_deps" "${log}/.poudriere.pkg_deps%"
+@@ -7320,6 +7351,10 @@ prepare_ports() {
  
  	clean_build_queue
  
@@ -168,7 +182,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7446,6 +7488,67 @@ load_priorities() {
+@@ -7446,6 +7481,67 @@ load_priorities() {
  	return 0
  }
  
@@ -236,7 +250,7 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -7971,6 +8074,9 @@ DRY_RUN=0
+@@ -7971,6 +8067,9 @@ DRY_RUN=0
  : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
  
  : ${HTML_TYPE:=inline}
