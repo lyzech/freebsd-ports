@@ -13,6 +13,7 @@ audio/lmms
 audio/musicpd
 audio/portaudio
 audio/pulseaudio-module-sndio
+audio/qsynth
 audio/shairport-sync
 audio/sndio
 audio/spectrogram
