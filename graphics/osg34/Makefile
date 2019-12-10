@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.5.1
-PORTREVISION=	13
+PORTVERSION=	3.4.1
+DISTVERSIONPREFIX=	OpenSceneGraph-
+PORTREVISION=	12
 CATEGORIES=	graphics
-MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
-		http://mirror.amdmi3.ru/distfiles/
-PKGNAMESUFFIX=	-devel
-DISTNAME=	OpenSceneGraph-${PORTVERSION}
+PKGNAMESUFFIX=	34
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
@@ -21,19 +19,25 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-CONFLICTS=	osg
+USE_GITHUB=	yes
+GH_ACCOUNT=	openscenegraph
+GH_PROJECT=	OpenSceneGraph
 
-USES=		alias cmake jpeg gl pkgconfig xorg zip
+CONFLICTS=	osg-[0-9]*
+
+USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig xorg
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+# needed to ensure build on gcc-based archs; harmless otherwise
+CXXFLAGS+=	-Wno-narrowing
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=141 \
+		OSG_SHLIBVER=131 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
-PORTSCOUT=	limitw:1,odd
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA \
 		JASPER LIBLAS LUA NVTT OPENEXR PDF QT5 SDL \
@@ -92,7 +96,7 @@ PDF_USE=		gnome=cairo
 PDF_VARS=		FORCE_REQUIRE+=Poppler-glib
 PDF_VARS_OFF=		FORCE_IGNORE+=Poppler-glib
 QT5_USES=		qt:5
-QT5_USE=		qt=buildtools_build,core,gui,opengl,qmake_build,webkit
+QT5_USE=		qt=buildtools_build,core,gui,opengl,qmake_build,webkit,widgets
 QT5_CMAKE_ON=		-DDESIRED_QT_VERSION=5
 QT5_VARS=		FORCE_REQUIRE+="Qt5Widgets Qt5WebKitWidgets"
 QT5_VARS_OFF=		FORCE_IGNORE+="Qt5Widgets Qt5WebKitWidgets"
@@ -134,8 +138,8 @@ PLIST_SUB+=		QT="@comment "
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
-	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d; \
-		s|-pedantic||' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d' \
+		${WRKSRC}/CMakeLists.txt
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
