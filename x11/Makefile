@@ -132,6 +132,7 @@
     SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
+    SUBDIR += kitty
     SUBDIR += konsole
     SUBDIR += lemonbar
     SUBDIR += libICE
@@ -327,6 +328,7 @@
     SUBDIR += thinglaunch
     SUBDIR += thingylaunch
     SUBDIR += tilda
+    SUBDIR += tilix
     SUBDIR += tint
     SUBDIR += trayer
     SUBDIR += tycoon

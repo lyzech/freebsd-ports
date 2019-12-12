@@ -79,6 +79,7 @@
     SUBDIR += caffe
     SUBDIR += cairo
     SUBDIR += cairomm
+    SUBDIR += cairomm116
     SUBDIR += cal3d
     SUBDIR += camera
     SUBDIR += camerakit
@@ -326,6 +327,7 @@
     SUBDIR += guilib
     SUBDIR += gwenview
     SUBDIR += hdr_tools
+    SUBDIR += hdrmerge
     SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
@@ -537,6 +539,7 @@
     SUBDIR += mapyrus
     SUBDIR += megapov
     SUBDIR += mesa-demos
+    SUBDIR += mesa-dev
     SUBDIR += mesa-dri
     SUBDIR += mesa-libs
     SUBDIR += metacam
@@ -991,6 +994,7 @@
     SUBDIR += showimage
     SUBDIR += silgraphite
     SUBDIR += simage
+    SUBDIR += simple-scan
     SUBDIR += simpleviewer
     SUBDIR += sk1
     SUBDIR += sk1libs
