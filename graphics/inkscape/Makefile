@@ -3,6 +3,7 @@
 
 PORTNAME=	inkscape
 DISTVERSION=	1.0alpha
+PORTREVISION=	12
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.org/gallery/item/13331/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
