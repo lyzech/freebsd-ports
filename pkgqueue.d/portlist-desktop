@@ -94,6 +94,7 @@ misc/qt5ct
 multimedia/gstreamer1-plugins-all
 multimedia/handbrake
 multimedia/kodi-addon-inputstream.adaptive-devel
+multimedia/kodi-addon-peripheral.joystick-devel
 multimedia/kodi-addon-vfs.libarchive-devel
 multimedia/kodi-devel
 multimedia/libva-intel-driver
