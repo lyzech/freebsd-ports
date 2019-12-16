@@ -1,9 +1,9 @@
 Based on
 https://github.com/freebsd/poudriere/pull/554
 
---- src/share/poudriere/bulk.sh.orig	2019-08-28 20:11:55 UTC
+--- src/share/poudriere/bulk.sh.orig	2019-12-10 01:31:10 UTC
 +++ src/share/poudriere/bulk.sh
-@@ -58,6 +58,7 @@ Options:
+@@ -59,6 +59,7 @@ Options:
      -p tree     -- Specify on which ports tree the bulk build will be done
      -R          -- Clean RESTRICTED packages after building
      -r          -- Resursively test all dependencies as well
@@ -11,7 +11,7 @@ https://github.com/freebsd/poudriere/pull/554
      -S          -- Don't recursively rebuild packages affected by other
                     packages requiring incremental rebuild. This can result
                     in broken packages if the ones updated do not retain
-@@ -69,6 +70,7 @@ Options:
+@@ -70,6 +71,7 @@ Options:
                     debug output
      -w          -- Save WRKDIR on failed builds
      -z set      -- Specify which SET to use
@@ -19,16 +19,16 @@ https://github.com/freebsd/poudriere/pull/554
  EOF
  	exit 1
  }
-@@ -90,7 +92,7 @@ INTERACTIVE_MODE=0
+@@ -92,7 +94,7 @@ OVERLAYS=""
  
  [ $# -eq 0 ] && usage
  
--while getopts "aB:CcFf:iIj:J:knNp:RrSTtvwz:" FLAG; do
-+while getopts "0aB:CcFf:iIj:J:knNp:RrsSTtvwz:" FLAG; do
+-while getopts "aB:CcFf:iIj:J:knNO:p:RrSTtvwz:" FLAG; do
++while getopts "0aB:CcFf:iIj:J:knNO:p:RrsSTtvwz:" FLAG; do
  	case "${FLAG}" in
  		a)
  			ALL=1
-@@ -148,6 +150,12 @@ while getopts "aB:CcFf:iIj:J:knNp:RrSTtvwz:" FLAG; do
+@@ -155,6 +157,12 @@ while getopts "aB:CcFf:iIj:J:knNO:p:RrSTtvwz:" FLAG; d
  		r)
  			PORTTESTING_RECURSIVE=1
  			;;
@@ -41,9 +41,9 @@ https://github.com/freebsd/poudriere/pull/554
  		S)
  			SKIP_RECURSIVE_REBUILD=1
  			;;
---- src/share/poudriere/common.sh.orig	2019-08-28 20:11:55 UTC
+--- src/share/poudriere/common.sh.orig	2019-12-10 01:31:10 UTC
 +++ src/share/poudriere/common.sh
-@@ -1680,7 +1680,7 @@ enter_interactive() {
+@@ -1729,7 +1729,7 @@ enter_interactive() {
  		ensure_pkg_installed force_extract || \
  		    err 1 "Unable to extract pkg."
  		# Install the selected pkg package
@@ -52,13 +52,13 @@ https://github.com/freebsd/poudriere/pull/554
  		    /usr/bin/make -C \
  		    ${PORTSDIR}/$(injail /usr/bin/make \
  		    -f ${PORTSDIR}/Mk/bsd.port.mk -V PKGNG_ORIGIN) \
-@@ -1698,14 +1698,14 @@ enter_interactive() {
- 		originspec_decode "${originspec}" port dep_args flavor
+@@ -1748,14 +1748,14 @@ enter_interactive() {
  		# Install run-depends since this is an interactive test
  		msg "Installing run-depends for ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
+ 		_lookup_portdir portdir "${port}"
 -		injail env USE_PACKAGE_DEPENDS_ONLY=1 \
 +		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes \
- 		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
+ 		    /usr/bin/make -C "${portdir}" ${dep_args} \
  		    ${flavor:+FLAVOR=${flavor}} run-depends ||
  		    msg_warn "Failed to install ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}${COLOR_RESET} run-depends"
  		msg "Installing ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
@@ -66,10 +66,10 @@ https://github.com/freebsd/poudriere/pull/554
  		# the package in a different place than dependencies
 -		injail env USE_PACKAGE_DEPENDS_ONLY=1 ${PKGENV} \
 +		injail env USE_PACKAGE_DEPENDS_ONLY=1 IGNORE_OSVERSION=yes ${PKGENV} \
- 		    /usr/bin/make -C ${PORTSDIR}/${port} ${dep_args} \
+ 		    /usr/bin/make -C "${portdir}" ${dep_args} \
  		    ${flavor:+FLAVOR=${flavor}} install-package ||
  		    msg_warn "Failed to install ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
-@@ -3123,6 +3123,9 @@ build_port() {
+@@ -3184,6 +3184,9 @@ build_port() {
  	if [ "${PORTTESTING}" -eq 1 ]; then
  		install_order="${install_order} install"
  		deinstall="deinstall"
@@ -79,7 +79,7 @@ https://github.com/freebsd/poudriere/pull/554
  	fi
  	targets="check-sanity pkg-depends fetch-depends fetch checksum \
  		  extract-depends extract patch-depends patch build-depends \
-@@ -3219,6 +3222,18 @@ build_port() {
+@@ -3280,6 +3283,18 @@ build_port() {
  				    grep NEEDED | sort -u
  			fi
  			;;
@@ -98,7 +98,7 @@ https://github.com/freebsd/poudriere/pull/554
  		esac
  
  		print_phase_header ${phase}
-@@ -3243,11 +3258,17 @@ build_port() {
+@@ -3304,11 +3319,17 @@ build_port() {
  			export GID=${PORTBUILD_UID}
  		fi
  
@@ -118,7 +118,7 @@ https://github.com/freebsd/poudriere/pull/554
  		else
  			# Only set PKGENV during 'package' to prevent
  			# testport-built packages from going into the main repo
-@@ -4454,6 +4475,7 @@ deps_fetch_vars() {
+@@ -4515,6 +4536,7 @@ deps_fetch_vars() {
  		[ -n "${_origin_flavor}" ] && \
  		    err 1 "deps_fetch_vars: Using DEPENDS_ARGS but attempted lookup on ${originspec}"
  	fi
@@ -126,7 +126,7 @@ https://github.com/freebsd/poudriere/pull/554
  	if ! port_var_fetch_originspec "${originspec}" \
  	    PKGNAME _pkgname \
  	    ${_depends_args} \
-@@ -4463,13 +4485,29 @@ deps_fetch_vars() {
+@@ -4524,13 +4546,29 @@ deps_fetch_vars() {
  	    IGNORE _ignore \
  	    ${_changed_deps} \
  	    ${_changed_options} \
@@ -157,7 +157,7 @@ https://github.com/freebsd/poudriere/pull/554
  	[ -n "${_pkgname}" ] || \
  	    err 1 "deps_fetch_vars: failed to get PKGNAME for ${originspec}"
  
-@@ -7180,13 +7218,6 @@ prepare_ports() {
+@@ -7293,13 +7331,6 @@ prepare_ports() {
  
  	bset status "sanity:"
  
@@ -171,9 +171,9 @@ https://github.com/freebsd/poudriere/pull/554
  	if was_a_bulk_run; then
  		# Stash dependency graph
  		cp -f "${MASTERMNT}/.p/pkg_deps" "${log}/.poudriere.pkg_deps%"
-@@ -7320,6 +7351,10 @@ prepare_ports() {
- 
- 	clean_build_queue
+@@ -7437,6 +7468,10 @@ prepare_ports() {
+ 		update_stats_queued
+ 	fi
  
 +	pkg_seeding
 +
@@ -182,7 +182,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7446,6 +7481,67 @@ load_priorities() {
+@@ -7552,6 +7587,67 @@ load_priorities() {
  	return 0
  }
  
@@ -250,7 +250,7 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -7971,6 +8067,9 @@ DRY_RUN=0
+@@ -8080,6 +8176,9 @@ DRY_RUN=0
  : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
  
  : ${HTML_TYPE:=inline}
