@@ -3,6 +3,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	3.0.2
+PORTREVISION=	16
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
