@@ -1,0 +1,4 @@
+emulators/virtualbox-ose-kmod
+graphics/drm-kmod
+sysutils/acerhdf-kmod
+sysutils/lsof

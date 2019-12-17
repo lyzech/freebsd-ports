@@ -184,9 +184,9 @@ post-patch:
 # (see CMAKE_ARGS).
 	@${REINPLACE_CMD} 's@KODI_DEPENDSBUILD@true@' \
 		${WRKSRC}/cmake/modules/FindLibDvd.cmake
-# Abort build if freebsd.xml and linux.xml differ again.  The
-# upstream devs forget to sync them.  When that happens it might
-# be time to file a PR again.
+# Abort build if freebsd.xml and linux.xml differ again.
+# The upstream devs forget to sync them, so it might be time
+# to file a PR again.
 	@cd ${WRKSRC}/system/settings && \
 		if ! /usr/bin/cmp -s freebsd.xml linux.xml; then \
 			${ECHO_MSG} "=> freebsd.xml out of sync with linux.xml again"; \

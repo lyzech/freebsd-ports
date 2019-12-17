@@ -1,0 +1,1 @@
+CFLAGS+=	-Wno-reserved-user-defined-literal
