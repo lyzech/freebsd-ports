@@ -12,6 +12,7 @@
     SUBDIR += R-cran-askpass
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-openssl
+    SUBDIR += acme-client
     SUBDIR += acme.sh
     SUBDIR += acmed
     SUBDIR += acmetool

@@ -3,6 +3,7 @@
 
 PORTNAME=	libepoll-shim
 PORTVERSION=	0.0.20190903
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,6 +12,7 @@ COMMENT=	epoll shim implemented using kevent
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim

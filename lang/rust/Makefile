@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.39.0
+PORTVERSION?=	1.40.0
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	https://static.rust-lang.org/dist/:src \
+MASTER_SITES=	https://dev-static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/tobik/rust:rust_bootstrap \
 		https://static.rust-lang.org/dist/:cargo_bootstrap \
@@ -56,9 +56,9 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2019-09-26
-RUST_BOOTSTRAP_VERSION?=	1.38.0
-CARGO_BOOTSTRAP_VERSION?=	0.39.0
+BOOTSTRAPS_DATE?=		2019-11-07
+RUST_BOOTSTRAP_VERSION?=	1.39.0
+CARGO_BOOTSTRAP_VERSION?=	0.40.0
 COMPILER_RT_VERSION?=		9.0.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
