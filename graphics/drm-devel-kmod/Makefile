@@ -28,7 +28,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	ee53eae
+GH_TAGNAME=	9353021
 
 .include <bsd.port.options.mk>
 
