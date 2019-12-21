@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	would be funny to port everything to an iBook G4 for the memes but who seriously uses anything other than these for a desktop?
 
 USES=		bison compiler:c++11-lib gettext-tools localbase meson pathfix \
-		pkgconfig python:3.6,build shebangfix xorg
+		pkgconfig python:3.6+,build shebangfix xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcb xdamage xext xfixes xorgproto xshmfence xv xvmc xxf86vm
 

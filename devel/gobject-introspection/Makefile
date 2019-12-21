@@ -29,6 +29,7 @@ USE_LDCONFIG=	yes
 
 # Force it to put the .cache in ${WRKSRC} instead of ~/.cache. ports/143260
 MAKE_ENV=	HOME=${WRKDIR}
+MESON_ARGS=	-Dpython=${PYTHON_VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHON_CMD@|/usr/bin/env ${PYTHON_VERSION}|g' \
