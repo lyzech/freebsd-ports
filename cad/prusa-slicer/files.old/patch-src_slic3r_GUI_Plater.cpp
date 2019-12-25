@@ -1,20 +1,20 @@
---- src/slic3r/GUI/Plater.cpp.orig	2019-12-24 08:44:58 UTC
+--- src/slic3r/GUI/Plater.cpp.orig	2019-11-09 15:16:17 UTC
 +++ src/slic3r/GUI/Plater.cpp
-@@ -3738,7 +3738,7 @@ void Plater::priv::on_right_click(RBtnEvent& evt)
+@@ -3421,7 +3421,7 @@ void Plater::priv::on_right_click(Vec2dEvent& evt)
      }
  
-     if (q != nullptr && menu) {
+     if (q != nullptr) {
 -#ifdef __linux__
-+#ifdef __WXGTK__
++#if defined __linux__ || defined __FreeBSD__
          // For some reason on Linux the menu isn't displayed if position is specified
          // (even though the position is sane).
          q->PopupMenu(menu);
-@@ -5275,7 +5275,7 @@ void Plater::force_filament_colors_update()
+@@ -4762,7 +4762,7 @@ void Plater::on_config_change(const DynamicPrintConfig
  
  void Plater::on_activate()
  {
 -#ifdef __linux__
-+#ifdef __WXGTK__
++#if defined __linux__ || defined __FreeBSD__
      wxWindow *focus_window = wxWindow::FindFocus();
      // Activating the main frame, and no window has keyboard focus.
      // Set the keyboard focus to the visible Canvas3D.

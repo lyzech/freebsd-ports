@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	prusa-slicer
-DISTVERSION=	2.2.0-alpha1
+DISTVERSION=	2.2.0-alpha2
 CATEGORIES=	cad
 
 COMMENT=	G-code generator for 3D printers

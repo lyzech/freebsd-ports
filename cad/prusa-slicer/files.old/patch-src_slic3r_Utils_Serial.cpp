@@ -1,4 +1,4 @@
---- src/slic3r/Utils/Serial.cpp.orig	2019-12-24 08:44:58 UTC
+--- src/slic3r/Utils/Serial.cpp.orig	2019-11-09 15:17:44 UTC
 +++ src/slic3r/Utils/Serial.cpp
 @@ -47,7 +47,7 @@
  	#include <sys/select.h>
