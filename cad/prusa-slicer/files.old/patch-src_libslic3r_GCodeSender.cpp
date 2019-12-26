@@ -1,6 +1,6 @@
---- src/libslic3r/GCodeSender.cpp.orig	2019-12-24 08:44:58 UTC
+--- src/libslic3r/GCodeSender.cpp.orig	2019-11-09 15:29:32 UTC
 +++ src/libslic3r/GCodeSender.cpp
-@@ -8,13 +8,17 @@
+@@ -8,7 +8,7 @@
  #include <boost/date_time/posix_time/posix_time.hpp>
  #include <boost/lexical_cast.hpp>
  
@@ -9,17 +9,7 @@
  #include <termios.h>
  #endif
  #ifdef __APPLE__
- #include <sys/ioctl.h>
- #include <IOKit/serial/ioss.h>
- #endif
-+#if defined(__FreeBSD__)
-+#include <sys/ioctl.h>
-+#include <fcntl.h>
-+#endif
- #ifdef __linux__
- #include <sys/ioctl.h>
- #include <fcntl.h>
-@@ -146,7 +150,7 @@ GCodeSender::set_baud_rate(unsigned int baud_rate)
+@@ -146,7 +146,7 @@ GCodeSender::set_baud_rate(unsigned int baud_rate)
          if (ioctl(handle, TCSETS2, &ios))
              printf("Error in TCSETS2: %s\n", strerror(errno));
  		
