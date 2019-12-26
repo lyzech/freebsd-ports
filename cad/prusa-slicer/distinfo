@@ -1,3 +1,5 @@
-TIMESTAMP = 1577036169
+TIMESTAMP = 1577381706
 SHA256 (prusa3d-PrusaSlicer-version_2.2.0-alpha2_GH0.tar.gz) = 3f2cf178b507fce0baaa8026f9e446338a076723ef200dc49b2109a03d667372
 SIZE (prusa3d-PrusaSlicer-version_2.2.0-alpha2_GH0.tar.gz) = 30093181
+SHA256 (libusb-hidapi-7da5cc9_GH0.tar.gz) = 2eb358200d901388ebc444b0ae3e9678145456ada8f6473759bdcfb24429b929
+SIZE (libusb-hidapi-7da5cc9_GH0.tar.gz) = 112965
