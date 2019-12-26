@@ -15,7 +15,8 @@ USES=		cmake compiler:c++17-lang eigen:3
 USE_WX=		3.1
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
-		${LOCALBASE}/include/cereal/access.hpp:devel/cereal
+		${LOCALBASE}/include/cereal/access.hpp:devel/cereal \
+		${LOCALBASE}/include/hidapi/hidapi.h:comms/hidapi
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt \
