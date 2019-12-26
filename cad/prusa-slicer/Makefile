@@ -11,6 +11,8 @@ GH_ACCOUNT=	prusa3d
 GH_PROJECT=	PrusaSlicer
 DISTVERSIONPREFIX=	version_
 
+GH_TUPLE=	libusb:hidapi:7da5cc9:src/hidapi
+
 USES=		cmake compiler:c++17-lang eigen:3
 USE_WX=		3.1
 

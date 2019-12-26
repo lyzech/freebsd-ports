@@ -1,0 +1,11 @@
+--- src/hidapi/CMakeLists.txt.orig	2019-12-26 17:46:20 UTC
++++ src/hidapi/CMakeLists.txt
+@@ -5,7 +5,7 @@ elseif (APPLE)
+     set(HIDAPI_IMPL mac/hid.c)
+ else ()
+     # Assume Linux or Unix other than Mac OS
+-    set(HIDAPI_IMPL linux/hid.c)
++    set(HIDAPI_IMPL libusb/hid.c)
+ endif()
+
+ include_directories(include)
