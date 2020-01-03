@@ -4915,6 +4915,7 @@
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-bugzilla
+    SUBDIR += py-python-dbusmock
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
     SUBDIR += py-python-easyconfig
@@ -5504,6 +5505,7 @@
     SUBDIR += rubygem-aws-sdk-codegurureviewer
     SUBDIR += rubygem-aws-sdk-codepipeline
     SUBDIR += rubygem-aws-sdk-codestar
+    SUBDIR += rubygem-aws-sdk-codestarconnections
     SUBDIR += rubygem-aws-sdk-codestarnotifications
     SUBDIR += rubygem-aws-sdk-cognitoidentity
     SUBDIR += rubygem-aws-sdk-cognitoidentityprovider
@@ -5523,6 +5525,7 @@
     SUBDIR += rubygem-aws-sdk-datapipeline
     SUBDIR += rubygem-aws-sdk-datasync
     SUBDIR += rubygem-aws-sdk-dax
+    SUBDIR += rubygem-aws-sdk-detective
     SUBDIR += rubygem-aws-sdk-devicefarm
     SUBDIR += rubygem-aws-sdk-directconnect
     SUBDIR += rubygem-aws-sdk-directoryservice
