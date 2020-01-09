@@ -1561,6 +1561,7 @@
     SUBDIR += msgpack
     SUBDIR += msgpack-d
     SUBDIR += msgpuck
+    SUBDIR += msitools
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
     SUBDIR += mstch

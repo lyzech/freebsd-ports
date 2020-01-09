@@ -1,31 +1,31 @@
 --- CMakeLists.txt.orig	2018-04-23 17:26:25 UTC
 +++ CMakeLists.txt
 @@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
-
-
- option (REGOTH_BUILD_WITH_INSTALLER_EXTRACTOR "Compile with library to extract some installers of Gothic" OFF)
-+option (REGOTH_BUILD_WITH_SYSTEM_OPENAL "Compile with system OpenAL" OFF)
-
-
+ 
+ 
+ option (REGOTH_BUILD_WITH_INSTALLER_EXTRACTOR "Compile with library to extract some installers of Gothic" OFF) 
++option (REGOTH_BUILD_WITH_SYSTEM_OPENAL "Compile with system OpenAL" OFF) 
+ 
+ 
  # Vim - You Complete Me
 @@ -174,6 +175,9 @@ include_directories(lib/bullet3/src)
  set(BULLET_LIBRARIES BulletSoftBody BulletDynamics BulletCollision LinearMath)
  set(BULLET_MISC Bullet3Dynamics Bullet2FileLoader Bullet3Collision Bullet3Geometry Bullet3OpenCL_clew BulletFileLoader BulletWorldImporter BulletXmlWorldImporter ConvexDecomposition GIMPACTUtils HACD Test_BulletDynamics Test_BulletInverseDynamics Test_Collision)
-
+ 
 +# Find OpenGL
 +find_package(OpenGL REQUIRED)
 +include_directories(${OPENGL_INCLUDE_DIR}) # required by glfw headers
-
+ 
  # ------------------ Engine lib ------------------
  file(GLOB ENGINE_SRC
 @@ -223,54 +227,64 @@ endif()
  # ------------------ OpenAL ------------------
-
+ 
  # Set up OpenAL
 +if(REGOTH_BUILD_WITH_SYSTEM_OPENAL AND NOT EMSCRIPTEN)
 +    find_package(OpenAL REQUIRED)
 +    include_directories(${OPENAL_INCLUDE_DIR})
-
+ 
 -set(ALSOFT_CONFIG OFF CACHE BOOL "" FORCE)
 -set(ALSOFT_EXAMPLES OFF CACHE BOOL "" FORCE)
 -set(ALSOFT_INSTALL OFF CACHE BOOL "" FORCE)
@@ -56,7 +56,7 @@
 +    set(ALSOFT_CONFIG OFF CACHE BOOL "" FORCE)
 +    set(ALSOFT_EXAMPLES OFF CACHE BOOL "" FORCE)
 +    set(ALSOFT_INSTALL OFF CACHE BOOL "" FORCE)
-
+ 
 -if(NOT EMSCRIPTEN)
 -    add_subdirectory(${CMAKE_SOURCE_DIR}/lib/openal-soft)
 -    include_directories(${CMAKE_SOURCE_DIR}/lib/openal-soft/include)
@@ -119,7 +119,7 @@
 +        endif()
 +    endif()
  endif()
-
+ 
  # ---------------- libdmusic ----------------
 @@ -310,6 +324,10 @@ if(NOT ANDROID)
  else()
@@ -130,5 +130,5 @@
 +if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
 +    include_directories("lib/bgfx-cmake/bx/include/compat/freebsd")
  endif()
-
+ 
  add_subdirectory(lib/adpcm)

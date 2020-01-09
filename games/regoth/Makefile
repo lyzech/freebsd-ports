@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=		regoth
+PORTNAME=	regoth
 DISTVERSIONPREFIX=	nightly-
-DISTVERSION=		0.4.189
-CATEGORIES=		games
+DISTVERSION=	0.4.189
+CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Reimplementation of zEngine, the Gothic and Gothic II engine
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		cmake compiler:c++11-lib openal
+USES=		cmake compiler:c++11-lib gl openal xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	REGoth-project
@@ -33,9 +33,10 @@ GH_TUPLE=	ataulien:bgfx-cmake:9a9b596:bgfxcmake/lib/bgfx-cmake \
 		gocha:sf2cute:fcaf333:sf2cute \
 		REGoth-project:CAB-Installer-Extractor:a311fea:cab/lib/CAB-Installer-Extractor
 
-USE_XORG=	sm ice xext x11 xrandr xinerama xcursor
+USE_XORG=	ice sm x11 xcursor xext xinerama xrandr
 USE_GL=		gl glu
-LLD_UNSAFE=	yes # OpenAL https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219089
+# OpenAL https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219089
+LLD_UNSAFE=	yes
 CMAKE_ARGS+=	-DREGOTH_BUILD_WITH_SYSTEM_OPENAL:BOOL=YES
 
 post-extract:
@@ -52,10 +53,10 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/shaders/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/REGoth ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/bin/shaders/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/shaders/)
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/bin/REGoth ${STAGEDIR}${DATADIR}
+	(cd ${BUILD_WRKSRC}/bin/shaders/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/shaders/)
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/REGoth
 	${CAT} ${FILESDIR}/launcher.sh | ${SED} -e "s|%%DATADIR%%|${DATADIR}|" > \
 		${STAGEDIR}${PREFIX}/bin/REGoth
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/REGoth
 
 .include <bsd.port.mk>
