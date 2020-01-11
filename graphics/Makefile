@@ -527,7 +527,6 @@
     SUBDIR += maim
     SUBDIR += mandelbulber
     SUBDIR += mapcache
-    SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
     SUBDIR += megapov
@@ -1046,6 +1045,7 @@
     SUBDIR += vkd3d
     SUBDIR += volpack
     SUBDIR += vp
+    SUBDIR += vpaint
     SUBDIR += vulkan-loader
     SUBDIR += vv
     SUBDIR += waffle
