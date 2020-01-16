@@ -518,6 +518,7 @@
     SUBDIR += dulwich
     SUBDIR += dupl
     SUBDIR += duplo
+    SUBDIR += dwarf2json
     SUBDIR += dwarfdump
     SUBDIR += dxa65
     SUBDIR += dyncall
