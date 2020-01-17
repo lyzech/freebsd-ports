@@ -3852,6 +3852,7 @@
     SUBDIR += pecl-eio
     SUBDIR += pecl-ev
     SUBDIR += pecl-event
+    SUBDIR += pecl-expect
     SUBDIR += pecl-grpc
     SUBDIR += pecl-hrtime
     SUBDIR += pecl-inotify

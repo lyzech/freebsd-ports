@@ -881,6 +881,7 @@
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
     SUBDIR += personality
+    SUBDIR += perp
     SUBDIR += pesign
     SUBDIR += pfetch
     SUBDIR += pflogx
