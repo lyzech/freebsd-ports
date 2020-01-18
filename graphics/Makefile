@@ -843,7 +843,7 @@
     SUBDIR += py-paint
     SUBDIR += py-photocollage
     SUBDIR += py-pillow
-    SUBDIR += py-pivy-devel
+    SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-poppler

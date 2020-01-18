@@ -231,7 +231,7 @@
     SUBDIR += shared-desktop-ontologies
     SUBDIR += skinlf
     SUBDIR += slingshot
-    SUBDIR += soqt-devel
+    SUBDIR += soqt
     SUBDIR += swt
     SUBDIR += tepl
     SUBDIR += termit
