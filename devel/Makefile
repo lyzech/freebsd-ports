@@ -5855,6 +5855,7 @@
     SUBDIR += rubygem-faker
     SUBDIR += rubygem-faraday-cookie_jar
     SUBDIR += rubygem-faraday_middleware-aws-signers-v4
+    SUBDIR += rubygem-faraday_middleware-aws-sigv4
     SUBDIR += rubygem-faraday_middleware-multi_json
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_blank
@@ -6184,6 +6185,7 @@
     SUBDIR += rubygem-re2
     SUBDIR += rubygem-react-rails
     SUBDIR += rubygem-react-rails-rails5
+    SUBDIR += rubygem-readline-ext
     SUBDIR += rubygem-readwritesettings
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-recursive-open-struct
