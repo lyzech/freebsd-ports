@@ -25,6 +25,7 @@ OPTIONS_RADIO=	CONF
 OPTIONS_RADIO_CONF=	DEVD HAL UDEV
 DEVD_DESC=	Use devd for autoconfiguration of input devices
 HAL_DESC=	Use hald for autoconfiguration of input devices
+UDEV_DESC=	Use udev via libudev-devd for autoconfiguration of input devices
 SUID_DESC=	Install the Xorg server with setuid bit set
 UDEV_DESC=	Use udev for autoconfiguration of input devices
 OPTIONS_DEFAULT=DEVD SUID

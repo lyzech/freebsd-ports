@@ -4654,7 +4654,7 @@
     SUBDIR += py-medikit
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
-    SUBDIR += py-microversion-parse
+    SUBDIR += py-microversion_parse
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mock
@@ -6407,6 +6407,7 @@
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xdg
     SUBDIR += rubygem-xdg2
+    SUBDIR += rubygem-xdg3
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yui-compressor
