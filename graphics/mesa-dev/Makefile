@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mesa-dev
-DISTVERSION=	20.0.0-20191218
+DISTVERSION=	20.0.0-20200126
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	myfreeweb
 GL_PROJECT=	mesa
-GL_COMMIT=	c67bce7c40491d5b76f8b81e60fccd681cb2761a
+GL_COMMIT=	1c03f0cd8b0221e2d8f8402d67878c90edca7afa
 
 MESA_LLVM_VER?=	90
 
@@ -75,7 +75,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
 MESON_ARGS=	--native-file="${WRKSRC}/llvm.ini" \
-		-Delf-tls="false" \
+		-Delf-tls="true" \
 		-Dgallium-nine="true" \
 		-Dgallium-omx="disabled" \
 		-Dgallium-opencl="icd" \
@@ -87,7 +87,7 @@ MESON_ARGS=	--native-file="${WRKSRC}/llvm.ini" \
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	VK_ARCH="${ARCH:S/amd64/x86_64/:S/aarch64/arm64/}"
+PLIST_SUB+=	VK_ARCH="${ARCH:S/amd64/x86_64/}"
 
 .if ${ARCH} == amd64
 MESON_ARGS+=	-Dgallium-drivers=r300,r600,radeonsi,nouveau,virgl,svga,swrast,swr,iris \
