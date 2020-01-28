@@ -220,7 +220,6 @@
     SUBDIR += menu-cache
     SUBDIR += menulibre
     SUBDIR += metalock
-    SUBDIR += metisse
     SUBDIR += mkcomposecache
     SUBDIR += mlterm
     SUBDIR += mons
@@ -236,7 +235,6 @@
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
     SUBDIR += nxcomp
-    SUBDIR += ooxcb
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest
     SUBDIR += p5-X11-IdleTime

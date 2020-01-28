@@ -3,28 +3,28 @@
 @@ -23,6 +23,10 @@
   * SOFTWARE.
   */
-
+ 
 +#ifdef __FreeBSD__
 +#include <sys/mman.h>
 +#endif
 +
  #define _GNU_SOURCE
-
+ 
  #include <sys/types.h>
 @@ -59,6 +63,7 @@ err:
  }
  #endif
-
+ 
 +#ifndef __FreeBSD__
  static int
  create_tmpfile_cloexec(char *tmpname)
  {
 @@ -78,6 +83,7 @@ create_tmpfile_cloexec(char *tmpname)
-
+ 
  	return fd;
  }
 +#endif
-
+ 
  /*
   * Create a new, unique, anonymous file of the given size, and
 @@ -103,11 +109,14 @@ create_tmpfile_cloexec(char *tmpname)
@@ -49,10 +49,10 @@
  
  	free(name);
 +#endif /* __FreeBSD__ */
-
+ 
  	if (fd < 0)
  		return -1;
-
+ 
 -#ifdef HAVE_POSIX_FALLOCATE
 +#if defined(HAVE_POSIX_FALLOCATE) && !defined(__FreeBSD__)
  	ret = posix_fallocate(fd, 0, size);

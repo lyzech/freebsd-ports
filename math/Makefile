@@ -145,7 +145,6 @@
     SUBDIR += atlas
     SUBDIR += barvinok
     SUBDIR += bcal
-    SUBDIR += biggles
     SUBDIR += bitwise
     SUBDIR += blacs
     SUBDIR += blas
@@ -716,12 +715,10 @@
     SUBDIR += py-ffc
     SUBDIR += py-fiat
     SUBDIR += py-fpconst
-    SUBDIR += py-gato
     SUBDIR += py-gau2grid
     SUBDIR += py-gimmik
     SUBDIR += py-gmpy
     SUBDIR += py-gmpy2
-    SUBDIR += py-gnuplot
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-gym
@@ -736,7 +733,6 @@
     SUBDIR += py-levmar
     SUBDIR += py-libpoly
     SUBDIR += py-luminol
-    SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
     SUBDIR += py-matplotlib-scalebar
     SUBDIR += py-mpmath
@@ -759,7 +755,6 @@
     SUBDIR += py-piranha
     SUBDIR += py-plastex
     SUBDIR += py-primme
-    SUBDIR += py-probstat
     SUBDIR += py-pyFFTW
     SUBDIR += py-pyasp
     SUBDIR += py-pybloom
@@ -785,7 +780,6 @@
     SUBDIR += py-random2
     SUBDIR += py-rapi
     SUBDIR += py-roman
-    SUBDIR += py-rpy
     SUBDIR += py-rpy2
     SUBDIR += py-scientific
     SUBDIR += py-scikit-umfpack
