@@ -3935,6 +3935,7 @@
     SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
+    SUBDIR += premake5
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c

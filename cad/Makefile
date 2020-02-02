@@ -108,6 +108,7 @@
     SUBDIR += varkon
     SUBDIR += verilator
     SUBDIR += verilog-mode.el
+    SUBDIR += veroroute
     SUBDIR += xcircuit
     SUBDIR += yosys
     SUBDIR += z88
