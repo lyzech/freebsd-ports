@@ -183,7 +183,6 @@
     SUBDIR += py-qt5-quick
     SUBDIR += py-qt5-quickwidgets
     SUBDIR += py-qt5-widgets
-    SUBDIR += py-sexy
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-vte
