@@ -1043,6 +1043,7 @@
     SUBDIR += waifu2x-ncnn-vulkan
     SUBDIR += wayland
     SUBDIR += wayland-protocols
+    SUBDIR += wayland-protocols-devel
     SUBDIR += waylandpp
     SUBDIR += webp
     SUBDIR += webp-pixbuf-loader
