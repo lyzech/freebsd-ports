@@ -147,6 +147,8 @@
     SUBDIR += dynamechs
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
+    SUBDIR += egl-wayland
+    SUBDIR += eglexternalplatform
     SUBDIR += electricsheep
     SUBDIR += embree
     SUBDIR += enblend
