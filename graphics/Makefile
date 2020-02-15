@@ -971,6 +971,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += sdump
     SUBDIR += seejpeg
+    SUBDIR += seexpr
     SUBDIR += sekrit-twc-zimg
     SUBDIR += seom
     SUBDIR += separate
