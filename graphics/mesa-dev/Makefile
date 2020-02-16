@@ -26,7 +26,7 @@ GL_ACCOUNT=	myfreeweb
 GL_PROJECT=	mesa
 GL_COMMIT=	1c03f0cd8b0221e2d8f8402d67878c90edca7afa
 
-MESA_LLVM_VER?=	90
+MESA_LLVM_VER?=	10
 
 SHEBANG_FILES=	src/vulkan/overlay-layer/mesa-overlay-control.py
 
