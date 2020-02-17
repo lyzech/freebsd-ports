@@ -558,7 +558,6 @@
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
-    SUBDIR += ocre
     SUBDIR += ogre3d
     SUBDIR += ogre3d19
     SUBDIR += oidn
@@ -784,7 +783,6 @@
     SUBDIR += py-OWSLib
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
-    SUBDIR += py-PyX
     SUBDIR += py-actdiag
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
@@ -861,6 +859,7 @@
     SUBDIR += py-pyrsgis
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
+    SUBDIR += py-pyx
     SUBDIR += py-qt5-svg
     SUBDIR += py-rawkit
     SUBDIR += py-sane
