@@ -4356,6 +4356,7 @@
     SUBDIR += py-fastimport
     SUBDIR += py-fastnumbers
     SUBDIR += py-fbprophet
+    SUBDIR += py-filebytes
     SUBDIR += py-filemagic
     SUBDIR += py-first
     SUBDIR += py-five.formlib
