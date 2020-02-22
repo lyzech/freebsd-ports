@@ -4286,6 +4286,7 @@
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dask
     SUBDIR += py-dataclasses
+    SUBDIR += py-datadog
     SUBDIR += py-datatest
     SUBDIR += py-dateparser
     SUBDIR += py-dateutil
@@ -6476,6 +6477,7 @@
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-validate_email
     SUBDIR += rubygem-validate_url
+    SUBDIR += rubygem-validates_timeliness
     SUBDIR += rubygem-versionomy
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
