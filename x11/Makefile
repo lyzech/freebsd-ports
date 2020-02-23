@@ -337,7 +337,6 @@
     SUBDIR += wallutils
     SUBDIR += waybar
     SUBDIR += wbar
-    SUBDIR += wbarconf
     SUBDIR += wcm
     SUBDIR += wdisplays
     SUBDIR += wdm
