@@ -183,7 +183,7 @@ do-install:
 	${ECHO} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 .         endfor
 	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-	${ECHO} '${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO} 'exec ${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}
 .      endfor
 .    endif
