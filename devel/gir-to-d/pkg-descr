@@ -1,3 +1,0 @@
-This tool creates D language bindings from GObject introspection files.
-
-WWW: https://github.com/gtkd-developers/gir-to-d
