@@ -156,6 +156,7 @@
     SUBDIR += eog
     SUBDIR += eog-plugins
     SUBDIR += eom
+    SUBDIR += eos-movrec
     SUBDIR += epdfview
     SUBDIR += ephoto
     SUBDIR += epix
