@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mypaint-brushes
-PORTVERSION=	2.0.1
+PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	graphics
 
