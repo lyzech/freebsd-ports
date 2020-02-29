@@ -1241,6 +1241,7 @@
     SUBDIR += liblouis
     SUBDIR += liblpm
     SUBDIR += libltdl
+    SUBDIR += libluksde
     SUBDIR += liblxqt
     SUBDIR += libmaa
     SUBDIR += libmatheval
@@ -4583,6 +4584,8 @@
     SUBDIR += py-magic
     SUBDIR += py-mailcap-fix
     SUBDIR += py-manuel
+    SUBDIR += py-marrow.mailer
+    SUBDIR += py-marrow.util
     SUBDIR += py-marshmallow
     SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-mccabe
@@ -4961,7 +4964,6 @@
     SUBDIR += py-ruamel.ordereddict
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-rubymarshal
-    SUBDIR += py-rwt
     SUBDIR += py-rx
     SUBDIR += py-rx1
     SUBDIR += py-sanetime
