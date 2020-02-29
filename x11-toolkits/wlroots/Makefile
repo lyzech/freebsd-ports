@@ -23,7 +23,7 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	libudev-devd>=0.4.1:devel/libudev-devd \
-		mesa-dri>0:graphics/mesa-dri
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:${MESA_DRI_PORT}
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
