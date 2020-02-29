@@ -25,17 +25,11 @@ include/GLES3/gl32.h
 include/GLES3/gl3ext.h
 include/GLES3/gl3platform.h
 include/KHR/khrplatform.h
-include/d3dadapter/d3dadapter9.h
-include/d3dadapter/drm.h
-include/d3dadapter/present.h
 include/gbm.h
 %%INTEL%%include/vulkan/vulkan_intel.h
 include/xa_composite.h
 include/xa_context.h
 include/xa_tracker.h
-lib/d3d/d3dadapter9.so
-lib/d3d/d3dadapter9.so.1
-lib/d3d/d3dadapter9.so.1.0.0
 %%INTEL%%lib/dri/i915_dri.so
 %%INTEL%%lib/dri/i965_dri.so
 %%IRIS%%lib/dri/iris_dri.so
@@ -113,7 +107,6 @@ lib/vdpau/libvdpau_radeonsi.so
 lib/vdpau/libvdpau_radeonsi.so.1
 lib/vdpau/libvdpau_radeonsi.so.1.0
 lib/vdpau/libvdpau_radeonsi.so.1.0.0
-libdata/pkgconfig/d3d.pc
 libdata/pkgconfig/dri.pc
 libdata/pkgconfig/egl.pc
 libdata/pkgconfig/gbm.pc

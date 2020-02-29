@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mesa-dev
-DISTVERSION=	20.0.0-20200126
+DISTVERSION=	20.1.0-20200227
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	myfreeweb
 GL_PROJECT=	mesa
-GL_COMMIT=	1c03f0cd8b0221e2d8f8402d67878c90edca7afa
+GL_COMMIT=	e4cb4e4aa88fd50bdbb1566172d85e3081d320a3
 
 MESA_LLVM_VER?=	10
 
@@ -74,9 +74,16 @@ USE_BINUTILS=	yes
 LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
+# My patch deletes initial-exec from TLS, we just use the default global-dynamic mode
+# see https://gitlab.freedesktop.org/mesa/mesa/issues/966 for some more TLS discussion
+# tl;dr the modern way is TLSDESC which automagically makes global stuff fast, and
+#       FreeBSD rtld only supports that on AArch64 for now.
+#       Any ELF TLS should be faster than not using it (TSD).
+#       There is a glibc style hack to make dlopened initial-exec work in FreeBSD,
+#       but it runs out of space on amd64 now??
 MESON_ARGS=	--native-file="${WRKSRC}/llvm.ini" \
 		-Delf-tls="true" \
-		-Dgallium-nine="true" \
+		-Dgallium-nine="false" \
 		-Dgallium-omx="disabled" \
 		-Dgallium-opencl="icd" \
 		-Dgallium-va="true" \
