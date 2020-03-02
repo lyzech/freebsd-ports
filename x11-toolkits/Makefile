@@ -59,7 +59,6 @@
     SUBDIR += gtksourceview3-reference
     SUBDIR += gtksourceview4
     SUBDIR += gtksourceviewmm3
-    SUBDIR += hippo-canvas
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
@@ -177,14 +176,12 @@
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
     SUBDIR += py-kivy
-    SUBDIR += py-kiwi-gtk
     SUBDIR += py-qt5-gui
     SUBDIR += py-qt5-quick
     SUBDIR += py-qt5-quickwidgets
     SUBDIR += py-qt5-widgets
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
-    SUBDIR += py-vte
     SUBDIR += py-wax
     SUBDIR += py-wxPython-common
     SUBDIR += py-wxPython28
