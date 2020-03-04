@@ -156,6 +156,7 @@
     SUBDIR += fb
     SUBDIR += fiche
     SUBDIR += file2pcap
+    SUBDIR += findomain
     SUBDIR += findmtu
     SUBDIR += flent
     SUBDIR += flower
@@ -1483,6 +1484,7 @@
     SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp
+    SUBDIR += udpbroadcastrelay
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt
