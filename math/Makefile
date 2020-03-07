@@ -686,6 +686,7 @@
     SUBDIR += py-PuLP
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
+    SUBDIR += py-PySMT
     SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
     SUBDIR += py-algopy
@@ -700,6 +701,7 @@
     SUBDIR += py-bottleneck
     SUBDIR += py-cdecimal
     SUBDIR += py-chaospy
+    SUBDIR += py-claripy
     SUBDIR += py-cma
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
