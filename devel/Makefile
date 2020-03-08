@@ -1632,7 +1632,6 @@
     SUBDIR += opencvs
     SUBDIR += opendht
     SUBDIR += opengrok
-    SUBDIR += openmp
     SUBDIR += openocd
     SUBDIR += openwince-include
     SUBDIR += openzz
