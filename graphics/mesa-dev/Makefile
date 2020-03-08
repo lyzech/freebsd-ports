@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mesa-dev
-DISTVERSION=	20.1.0-20200227
+DISTVERSION=	20.1.0-20200308
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	myfreeweb
 GL_PROJECT=	mesa
-GL_COMMIT=	e4cb4e4aa88fd50bdbb1566172d85e3081d320a3
+GL_COMMIT=	beca31f01b4cdf5f997b7facc95e01fb4c98be07
 
 MESA_LLVM_VER?=	10
 
