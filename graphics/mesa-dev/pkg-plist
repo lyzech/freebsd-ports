@@ -1,4 +1,4 @@
-n/mesa-overlay-control.py
+bin/mesa-overlay-control.py
 etc/OpenCL/vendors/mesa.icd
 include/EGL/egl.h
 include/EGL/eglext.h
