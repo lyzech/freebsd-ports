@@ -6,7 +6,7 @@ PORTVERSION=	1.7.5 # sync with games/libretro-core-info
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games emulators
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
 
 LICENSE=	GPLv3
