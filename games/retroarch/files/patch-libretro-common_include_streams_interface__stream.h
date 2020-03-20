@@ -1,8 +1,8 @@
---- libretro-common/include/streams/interface_stream.h.orig	2018-02-19 12:43:32 UTC
+--- libretro-common/include/streams/interface_stream.h.orig	2016-05-02 20:17:12 UTC
 +++ libretro-common/include/streams/interface_stream.h
-@@ -32,6 +32,8 @@
-
- RETRO_BEGIN_DECLS
+@@ -29,6 +29,8 @@
+ #include <retro_common_api.h>
+ #include <boolean.h>
  
 +#include <sys/types.h>
 +

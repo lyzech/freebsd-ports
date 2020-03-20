@@ -865,10 +865,9 @@
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
-    SUBDIR += py-soya3d
     SUBDIR += py-spectra
     SUBDIR += py-stltools
-    SUBDIR += py-svg_path
+    SUBDIR += py-svg.path
     SUBDIR += py-svgwrite
     SUBDIR += py-termtosvg
     SUBDIR += py-toyplot

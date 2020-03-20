@@ -3965,7 +3965,6 @@
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pushmi
-    SUBDIR += py-Acquisition
     SUBDIR += py-AddOns
     SUBDIR += py-Automat
     SUBDIR += py-Breve
@@ -3982,10 +3981,7 @@
     SUBDIR += py-PeachPy
     SUBDIR += py-Pint
     SUBDIR += py-Products.ExternalEditor
-    SUBDIR += py-Products.LDAPUserFolder
     SUBDIR += py-Products.PloneLanguageTool
-    SUBDIR += py-Products.contentmigration
-    SUBDIR += py-Products.validation
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyLD
     SUBDIR += py-PyODE
@@ -4560,7 +4556,6 @@
     SUBDIR += py-libiocage
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
-    SUBDIR += py-libplist
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
     SUBDIR += py-libusb1
@@ -4618,7 +4613,6 @@
     SUBDIR += py-multiprocess
     SUBDIR += py-munch
     SUBDIR += py-murmurhash
-    SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
@@ -5171,7 +5165,6 @@
     SUBDIR += py-z3c.autoinclude
     SUBDIR += py-z3c.batching
     SUBDIR += py-z3c.zcmlhook
-    SUBDIR += py-zLOG
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
