@@ -39,6 +39,7 @@
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver
+    SUBDIR += graywolf
     SUBDIR += gspiceui
     SUBDIR += gtkwave
     SUBDIR += impact
@@ -92,6 +93,7 @@
     SUBDIR += python-gdsii
     SUBDIR += qcad
     SUBDIR += qelectrotech
+    SUBDIR += qflow
     SUBDIR += qmls
     SUBDIR += qrouter
     SUBDIR += repsnapper

@@ -4695,6 +4695,7 @@
     SUBDIR += py-p4python
     SUBDIR += py-packaging
     SUBDIR += py-parallax
+    SUBDIR += py-parametrized
     SUBDIR += py-parsedatetime
     SUBDIR += py-parver
     SUBDIR += py-pastel
