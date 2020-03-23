@@ -44,7 +44,7 @@ do-configure:
 
 # Keep in sync with ~~lang/clover~~ mesa-dev
 #.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
-LLVM_DEFAULT=	90
+#LLVM_DEFAULT=	90
 #.endif
 
 .include <bsd.port.mk>
