@@ -39,6 +39,10 @@ lib/mypaint/gui/__pycache__/colorpreview.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/colorpreview.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/colortools.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/colortools.cpython-%%PYTHON_SUFFIX%%.pyc
+lib/mypaint/gui/__pycache__/compatconfig.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+lib/mypaint/gui/__pycache__/compatconfig.cpython-%%PYTHON_SUFFIX%%.pyc
+lib/mypaint/gui/__pycache__/compatibility.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+lib/mypaint/gui/__pycache__/compatibility.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/cursor.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/cursor.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/curve.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -135,6 +139,8 @@ lib/mypaint/gui/__pycache__/tileddrawwidget.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/tileddrawwidget.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/toolbar.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/toolbar.cpython-%%PYTHON_SUFFIX%%.pyc
+lib/mypaint/gui/__pycache__/toolstack.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+lib/mypaint/gui/__pycache__/toolstack.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/topbar.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/gui/__pycache__/topbar.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/gui/__pycache__/uicolor.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -206,6 +212,8 @@ lib/mypaint/gui/colors/sliders.py
 lib/mypaint/gui/colors/uimisc.py
 lib/mypaint/gui/colors/util.py
 lib/mypaint/gui/colortools.py
+lib/mypaint/gui/compatconfig.py
+lib/mypaint/gui/compatibility.py
 lib/mypaint/gui/cursor.py
 lib/mypaint/gui/curve.py
 lib/mypaint/gui/device.py
@@ -271,6 +279,7 @@ lib/mypaint/gui/toolbar-view-modes.xml
 lib/mypaint/gui/toolbar-view-resets.xml
 lib/mypaint/gui/toolbar.py
 lib/mypaint/gui/toolbar.xml
+lib/mypaint/gui/toolstack.py
 lib/mypaint/gui/topbar.py
 lib/mypaint/gui/uicolor.py
 lib/mypaint/gui/userconfig.py
@@ -301,6 +310,8 @@ lib/mypaint/lib/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/lib/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/lib/__pycache__/document.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/lib/__pycache__/document.cpython-%%PYTHON_SUFFIX%%.pyc
+lib/mypaint/lib/__pycache__/eotf.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+lib/mypaint/lib/__pycache__/eotf.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/lib/__pycache__/errors.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/lib/__pycache__/errors.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/lib/__pycache__/feedback.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -370,6 +381,7 @@ lib/mypaint/lib/color.py
 lib/mypaint/lib/command.py
 lib/mypaint/lib/config.py
 lib/mypaint/lib/document.py
+lib/mypaint/lib/eotf.py
 lib/mypaint/lib/errors.py
 lib/mypaint/lib/feedback.py
 lib/mypaint/lib/fileutils.py
@@ -435,7 +447,6 @@ share/icons/hicolor/16x16/actions/mypaint-tool-hsvwheel.png
 share/icons/hicolor/16x16/actions/mypaint-tool-hue-wheel.png
 share/icons/hicolor/16x16/actions/mypaint-tool-rings-color-changer.png
 share/icons/hicolor/16x16/actions/mypaint-tool-wash-color-changer.png
-share/icons/hicolor/16x16/apps/mypaint.png
 share/icons/hicolor/22x22/actions/mypaint-tool-color-palette.png
 share/icons/hicolor/22x22/actions/mypaint-tool-color-rgb.png
 share/icons/hicolor/22x22/actions/mypaint-tool-component-sliders.png
@@ -447,7 +458,6 @@ share/icons/hicolor/22x22/actions/mypaint-tool-hsvwheel.png
 share/icons/hicolor/22x22/actions/mypaint-tool-hue-wheel.png
 share/icons/hicolor/22x22/actions/mypaint-tool-rings-color-changer.png
 share/icons/hicolor/22x22/actions/mypaint-tool-wash-color-changer.png
-share/icons/hicolor/22x22/apps/mypaint.png
 share/icons/hicolor/24x24/actions/mypaint-add-symbolic.svg
 share/icons/hicolor/24x24/actions/mypaint-brush-blend-modes-symbolic.svg
 share/icons/hicolor/24x24/actions/mypaint-brush-stroke-symbolic.svg
@@ -510,8 +520,6 @@ share/icons/hicolor/24x24/actions/mypaint-view-symbolic.svg
 share/icons/hicolor/24x24/actions/mypaint-view-zoom-less-symbolic.svg
 share/icons/hicolor/24x24/actions/mypaint-view-zoom-more-symbolic.svg
 share/icons/hicolor/24x24/actions/mypaint-view-zoom-symbolic.svg
-share/icons/hicolor/24x24/apps/mypaint.png
-share/icons/hicolor/256x256/apps/mypaint.png
 share/icons/hicolor/32x32/actions/mypaint-tool-color-palette.png
 share/icons/hicolor/32x32/actions/mypaint-tool-color-rgb.png
 share/icons/hicolor/32x32/actions/mypaint-tool-component-sliders.png
@@ -523,7 +531,6 @@ share/icons/hicolor/32x32/actions/mypaint-tool-hsvwheel.png
 share/icons/hicolor/32x32/actions/mypaint-tool-hue-wheel.png
 share/icons/hicolor/32x32/actions/mypaint-tool-rings-color-changer.png
 share/icons/hicolor/32x32/actions/mypaint-tool-wash-color-changer.png
-share/icons/hicolor/32x32/apps/mypaint.png
 share/icons/hicolor/48x48/actions/mypaint-tool-color-palette.png
 share/icons/hicolor/48x48/actions/mypaint-tool-color-rgb.png
 share/icons/hicolor/48x48/actions/mypaint-tool-component-sliders.png
@@ -535,8 +542,6 @@ share/icons/hicolor/48x48/actions/mypaint-tool-hsvwheel.png
 share/icons/hicolor/48x48/actions/mypaint-tool-hue-wheel.png
 share/icons/hicolor/48x48/actions/mypaint-tool-rings-color-changer.png
 share/icons/hicolor/48x48/actions/mypaint-tool-wash-color-changer.png
-share/icons/hicolor/48x48/apps/mypaint.png
-share/icons/hicolor/512x512/apps/mypaint.png
 share/icons/hicolor/scalable/actions/mypaint-about-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-add-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-bookmark-new-symbolic.svg
@@ -576,6 +581,7 @@ share/icons/hicolor/scalable/actions/mypaint-fullscreen-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-globe-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-help-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-history-symbolic.svg
+share/icons/hicolor/scalable/actions/mypaint-hsv-rotate-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-info-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-layer-above-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-layer-below-symbolic.svg
@@ -657,6 +663,8 @@ share/icons/hicolor/scalable/actions/mypaint-view-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-view-zoom-less-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-view-zoom-more-symbolic.svg
 share/icons/hicolor/scalable/actions/mypaint-view-zoom-symbolic.svg
+share/icons/hicolor/scalable/apps/org.mypaint.MyPaint.svg
+share/icons/hicolor/symbolic/apps/org.mypaint.MyPaint-symbolic.svg
 share/locale/af/LC_MESSAGES/mypaint.mo
 share/locale/ar/LC_MESSAGES/mypaint.mo
 share/locale/as/LC_MESSAGES/mypaint.mo
@@ -750,8 +758,8 @@ share/metainfo/mypaint.appdata.xml
 %%DATADIR%%/backgrounds/05_grey3.png
 %%DATADIR%%/backgrounds/10_soft_yellow.png
 %%DATADIR%%/backgrounds/11_weak_blue.png
-%%DATADIR%%/backgrounds/50_comicthumbs.png
-%%DATADIR%%/backgrounds/50_storyboard-template.png
+%%DATADIR%%/backgrounds/50_comic_thumbnails.png
+%%DATADIR%%/backgrounds/50_storyboard.png
 %%DATADIR%%/backgrounds/README.md
 %%DATADIR%%/backgrounds/canvas1_1.png
 %%DATADIR%%/backgrounds/canvas1_2.png
@@ -764,29 +772,10 @@ share/metainfo/mypaint.appdata.xml
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_a_1.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_a_2.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_b_1.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_b_2.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_b_3.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_b_4.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_b_5.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_b_6.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_c_1.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_c_2.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_c_3.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_c_4.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_d_1.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_d_2.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_d_3.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_d_4.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_e_1.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_e_2.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_e_3.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_e_4.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_e_5.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_e_6.png
 %%DATADIR%%/backgrounds/mrmamurk/mamurk_f_1.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_f_2.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_f_3.png
-%%DATADIR%%/backgrounds/mrmamurk/mamurk_f_4.png
 %%DATADIR%%/backgrounds/paper1_1.png
 %%DATADIR%%/backgrounds/paper1_10.png
 %%DATADIR%%/backgrounds/paper1_11.png
@@ -842,7 +831,6 @@ share/metainfo/mypaint.appdata.xml
 %%DATADIR%%/backgrounds/ramon/HR_RoughPaper.png
 %%DATADIR%%/backgrounds/ramon/HR_SketchPaper 02.png
 %%DATADIR%%/backgrounds/ramon/HR_SketchPaper.png
-%%DATADIR%%/backgrounds/ramon/HR_Wall_Paper.png
 %%DATADIR%%/backgrounds/ramon/HR_WaterColor.png
 %%DATADIR%%/backgrounds/ramon/readme_papers.txt
 %%DATADIR%%/backgrounds/squares2.png
