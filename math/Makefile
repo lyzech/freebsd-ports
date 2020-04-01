@@ -843,7 +843,6 @@
     SUBDIR += qtiplot-doc
     SUBDIR += qwtplot3d
     SUBDIR += randlib
-    SUBDIR += rankwidth
     SUBDIR += rapid
     SUBDIR += reduce
     SUBDIR += reduce-psl
