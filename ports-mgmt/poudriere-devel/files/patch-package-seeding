@@ -1,7 +1,7 @@
 Based on
 https://github.com/freebsd/poudriere/pull/554
 
---- src/share/poudriere/bulk.sh.orig	2019-12-10 01:31:10 UTC
+--- src/share/poudriere/bulk.sh.orig	2020-03-26 20:29:02 UTC
 +++ src/share/poudriere/bulk.sh
 @@ -59,6 +59,7 @@ Options:
      -p tree     -- Specify on which ports tree the bulk build will be done
@@ -41,9 +41,9 @@ https://github.com/freebsd/poudriere/pull/554
  		S)
  			SKIP_RECURSIVE_REBUILD=1
  			;;
---- src/share/poudriere/common.sh.orig	2019-12-10 01:31:10 UTC
+--- src/share/poudriere/common.sh.orig	2020-03-26 20:29:02 UTC
 +++ src/share/poudriere/common.sh
-@@ -1729,7 +1729,7 @@ enter_interactive() {
+@@ -1728,7 +1728,7 @@ enter_interactive() {
  		ensure_pkg_installed force_extract || \
  		    err 1 "Unable to extract pkg."
  		# Install the selected pkg package
@@ -52,7 +52,7 @@ https://github.com/freebsd/poudriere/pull/554
  		    /usr/bin/make -C \
  		    ${PORTSDIR}/$(injail /usr/bin/make \
  		    -f ${PORTSDIR}/Mk/bsd.port.mk -V PKGNG_ORIGIN) \
-@@ -1748,14 +1748,14 @@ enter_interactive() {
+@@ -1747,14 +1747,14 @@ enter_interactive() {
  		# Install run-depends since this is an interactive test
  		msg "Installing run-depends for ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
  		_lookup_portdir portdir "${port}"
@@ -69,7 +69,7 @@ https://github.com/freebsd/poudriere/pull/554
  		    /usr/bin/make -C "${portdir}" ${dep_args} \
  		    ${flavor:+FLAVOR=${flavor}} install-package ||
  		    msg_warn "Failed to install ${COLOR_PORT}${port}${flavor:+@${flavor}} | ${pkgname}"
-@@ -3184,6 +3184,9 @@ build_port() {
+@@ -3187,6 +3187,9 @@ build_port() {
  	if [ "${PORTTESTING}" -eq 1 ]; then
  		install_order="${install_order} install"
  		deinstall="deinstall"
@@ -79,7 +79,7 @@ https://github.com/freebsd/poudriere/pull/554
  	fi
  	targets="check-sanity pkg-depends fetch-depends fetch checksum \
  		  extract-depends extract patch-depends patch build-depends \
-@@ -3280,6 +3283,18 @@ build_port() {
+@@ -3283,6 +3286,18 @@ build_port() {
  				    grep NEEDED | sort -u
  			fi
  			;;
@@ -98,7 +98,7 @@ https://github.com/freebsd/poudriere/pull/554
  		esac
  
  		print_phase_header ${phase}
-@@ -3304,11 +3319,17 @@ build_port() {
+@@ -3307,11 +3322,17 @@ build_port() {
  			export GID=${PORTBUILD_UID}
  		fi
  
@@ -157,7 +157,7 @@ https://github.com/freebsd/poudriere/pull/554
  	[ -n "${_pkgname}" ] || \
  	    err 1 "deps_fetch_vars: failed to get PKGNAME for ${originspec}"
  
-@@ -7293,13 +7331,6 @@ prepare_ports() {
+@@ -7299,13 +7337,6 @@ prepare_ports() {
  
  	bset status "sanity:"
  
@@ -171,7 +171,7 @@ https://github.com/freebsd/poudriere/pull/554
  	if was_a_bulk_run; then
  		# Stash dependency graph
  		cp -f "${MASTERMNT}/.p/pkg_deps" "${log}/.poudriere.pkg_deps%"
-@@ -7437,6 +7468,10 @@ prepare_ports() {
+@@ -7443,6 +7474,10 @@ prepare_ports() {
  		update_stats_queued
  	fi
  
@@ -182,7 +182,7 @@ https://github.com/freebsd/poudriere/pull/554
  	# Call the deadlock code as non-fatal which will check for cycles
  	msg "Sanity checking build queue"
  	bset status "pkgqueue_sanity_check:"
-@@ -7552,6 +7587,67 @@ load_priorities() {
+@@ -7558,6 +7593,67 @@ load_priorities() {
  	return 0
  }
  
@@ -250,10 +250,10 @@ https://github.com/freebsd/poudriere/pull/554
  balance_pool() {
  	[ "${PWD}" = "${MASTERMNT}/.p" ] || \
  	    err 1 "balance_pool requires PWD=${MASTERMNT}/.p"
-@@ -8080,6 +8176,9 @@ DRY_RUN=0
- : ${BUILDNAME:=$(date +${BUILDNAME_FORMAT})}
- 
+@@ -8093,6 +8189,9 @@ DRY_RUN=0
  : ${HTML_TYPE:=inline}
+ : ${LC_COLLATE:=C}
+ export LC_COLLATE
 +
 +: ${PKG_SEEDING:=no}
 +: ${RUN_TESTS:=no}
