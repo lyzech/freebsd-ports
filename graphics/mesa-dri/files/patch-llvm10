@@ -1,0 +1,32 @@
+From ee9811a0bb86d3d75fafeece368f6182048807d0 Mon Sep 17 00:00:00 2001
+From: Samuel Pitoiset <samuel.pitoiset@gmail.com>
+Date: Thu, 14 Nov 2019 10:04:29 +0100
+Subject: [PATCH] ac: fix build with recent LLVM
+
+Build is broken since "Move CodeGenFileType enum to Support/CodeGen.h".
+
+Signed-off-by: Samuel Pitoiset <samuel.pitoiset@gmail.com>
+Reviewed-by: Pierre-Eric Pelloux-Prayer <pierre-eric.pelloux-prayer@amd.com>
+---
+ src/amd/llvm/ac_llvm_helper.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/amd/llvm/ac_llvm_helper.cpp b/src/amd/llvm/ac_llvm_helper.cpp
+index 7f3ff71fd9c..5bd7453b508 100644
+--- src/amd/common/ac_llvm_helper.cpp
++++ src/amd/common/ac_llvm_helper.cpp
+@@ -192,7 +192,11 @@ struct ac_compiler_passes *ac_create_llvm_passes(LLVMTargetMachineRef tm)
+ 
+ 	if (TM->addPassesToEmitFile(p->passmgr, p->ostream,
+ 				    nullptr,
++#if LLVM_VERSION_MAJOR >= 10
++				    llvm::CGFT_ObjectFile)) {
++#else
+ 				    llvm::TargetMachine::CGFT_ObjectFile)) {
++#endif
+ 		fprintf(stderr, "amd: TargetMachine can't emit a file of this type!\n");
+ 		delete p;
+ 		return NULL;
+-- 
+2.24.1
+
