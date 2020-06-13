@@ -9,15 +9,17 @@
   https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5462/diffs
 --- meson.build.orig	2020-06-14 07:52:34 UTC
 +++ meson.build
-@@ -25,7 +25,7 @@ project(
+@@ -25,8 +25,8 @@ project(
      [find_program('python', 'python2', 'python3'), 'bin/meson_get_version.py']
    ).stdout(),
    license : 'MIT',
 -  meson_version : '>= 0.45',
+-  default_options : ['buildtype=debugoptimized', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++11']
 +  meson_version : '>= 0.46',
-   default_options : ['buildtype=debugoptimized', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++11']
++  default_options : ['buildtype=debugoptimized', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++14']
  )
  
+ cc = meson.get_compiler('c')
 @@ -336,7 +336,7 @@ if with_egl and not (with_platform_drm or with_platfor
    endif
  endif
