@@ -1,0 +1,10 @@
+--- make/lib/LibCommon.gmk.orig	2020-07-11 12:36:39 UTC
++++ make/lib/LibCommon.gmk
+@@ -54,6 +54,7 @@ else ifeq ($(TOOLCHAIN_TYPE), solstudio)
+   CXXFLAGS_JDKLIB += -xldscope=hidden
+   EXPORT_ALL_SYMBOLS := -xldscope=global
+ endif
++CFLAGS_JDKLIB += -fcommon
+ 
+ # Put the libraries here.
+ INSTALL_LIBRARIES_HERE := $(call FindLibDirForModule, $(MODULE))
