@@ -79,8 +79,6 @@ irc/hexchat
 java/intellij-fsnotifier
 java/intellij-pty4j
 java/jd-gui
-java/openjdk8
-java/openjfx8-devel
 lang/chibi-scheme
 lang/chicken5
 lang/gcc
