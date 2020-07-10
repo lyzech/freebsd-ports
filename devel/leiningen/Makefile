@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/devel/leiningen/Makefile 528608 2020-03-17 22:39:03Z tobik $
 
 PORTNAME=	leiningen
 PORTVERSION=	2.9.4
