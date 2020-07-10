@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-fcommon -I${LOCALBASE}/include
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
 INSTALL_TARGET=	install-strip
 
