@@ -10,6 +10,7 @@ COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
 USES=		xorg
 USE_XORG=	xorgproto x11 xdamage xext xfixes xshmfence
+CFLAGS+=	-fcommon
 
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
