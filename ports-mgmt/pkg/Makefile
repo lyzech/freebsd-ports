@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
-CFLAGS+=	-Wno-error
+CFLAGS+=	-fcommon -Wno-error
 
 OPTIONS_DEFINE=	DOCS
 
