@@ -1,5 +1,16 @@
---- build.xml.orig	2017-04-03 11:23:57 UTC
+--- build.xml.orig	2018-05-16 08:09:50 UTC
 +++ build.xml
+@@ -160,8 +160,8 @@ list of possible build targets.
+   <property name="javac.debug" value="on"/>
+   <property name="javac.optimize" value="off"/>
+   <property name="javac.deprecation" value="on"/>
+-  <property name="javac.source" value="1.6"/>
+-  <property name="javac.target" value="1.6"/>
++  <property name="javac.source" value="1.7"/>
++  <property name="javac.target" value="1.7"/>
+   <property name="javac.fork" value="no"/>
+   <property name="junit.fork" value="yes"/>
+   <property name="junit.haltonfailure" value="off"/>
 @@ -208,7 +208,7 @@ list of possible build targets.
    <property name="lib.dir" value="${basedir}/lib"/>
    <property name="user.hyph.dir" value="${basedir}/hyph"/>
