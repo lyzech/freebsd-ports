@@ -32,6 +32,7 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dexamples=false
+CFLAGS+=	-fcommon
 
 # XXX Drop after FreeBSD 11.3 EOL (aarch64)
 .if exists(/usr/lib/clang/8.0.0)
