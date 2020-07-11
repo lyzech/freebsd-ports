@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-77a8715634e3
 USES=		gmake sdl tar:bzip2
 MAKE_ENV=	ALL_CFLAGS="${CFLAGS}"
 USE_SDL=	sdl
+CFLAGS+=	-fcommon
 SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/share/tyrian
 
