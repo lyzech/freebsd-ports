@@ -20,5 +20,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 
 .include <bsd.port.mk>
