@@ -28,6 +28,7 @@ BUILD_DEPENDS+= gsed>0:textproc/gsed \
 		v4l_compat>=${PORTVERSION}:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES+=		gmake iconv jpeg libtool pathfix pkgconfig
