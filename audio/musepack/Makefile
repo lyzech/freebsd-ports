@@ -17,5 +17,6 @@ USES=		autoreconf libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-fcommon
 
 .include <bsd.port.mk>
