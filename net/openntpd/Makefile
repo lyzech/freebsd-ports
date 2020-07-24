@@ -24,6 +24,7 @@ GROUPS=		_ntp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cacert=${LOCALBASE}/etc/ssl/cert.pem
+CFLAGS+=	-fcommon
 
 SUB_FILES=	480.status-openntpd pkg-message
 SUB_LIST=	MANPREFIX="${MANPREFIX}"
