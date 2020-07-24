@@ -43,6 +43,17 @@ https://github.com/freebsd/poudriere/pull/554
  			;;
 --- src/share/poudriere/common.sh.orig	2020-03-26 20:29:02 UTC
 +++ src/share/poudriere/common.sh
+@@ -1343,8 +1343,8 @@ siginfo_handler() {
+ 			colorize_job_id job_id_color "${j}"
+ 
+ 			# Must put colors in format
+-			format_origin_phase="\t[${job_id_color}%s${COLOR_RESET}]: ${COLOR_PORT}%-25s | %-25s ${COLOR_PHASE}%-15s${COLOR_RESET} (%s / %s)\n"
+-			format_phase="\t[${job_id_color}%s${COLOR_RESET}]: %53s ${COLOR_PHASE}%-15s${COLOR_RESET}\n"
++			format_origin_phase="\t[${job_id_color}%s${COLOR_RESET}]: ${COLOR_PORT}%-35s | %-35s ${COLOR_PHASE}%-15s${COLOR_RESET} (%s / %s)\n"
++			format_phase="\t[${job_id_color}%s${COLOR_RESET}]: %73s ${COLOR_PHASE}%-15s${COLOR_RESET}\n"
+ 			if [ -n "${pkgname}" ]; then
+ 				elapsed=$((${now} - ${started}))
+ 				calculate_duration buildtime "${elapsed}"
 @@ -1728,7 +1728,7 @@ enter_interactive() {
  		ensure_pkg_installed force_extract || \
  		    err 1 "Unable to extract pkg."
