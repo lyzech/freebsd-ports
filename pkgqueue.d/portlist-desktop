@@ -179,6 +179,7 @@ www/nginx
 www/npm
 www/obhttpd
 www/stagit
+www/vimb
 www/youtube_dl
 www/zola
 x11-fm/thunar
