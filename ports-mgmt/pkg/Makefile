@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.14.6
-PORTREVISION=	1
+PORTREVISION=	2
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 #MASTER_SITES=	\
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
-CFLAGS+=	-fcommon -Wno-error
+CFLAGS+=	-Wno-error
 
 OPTIONS_DEFINE=	DOCS
 
