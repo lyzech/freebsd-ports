@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	all shared_library
 TEST_TARGET=	runtest
 TEST_ENV=	LD_LIBRARY_PATH=${WRKSRC}
+CFLAGS+=	-fcommon
 
 post-patch:
 	@${REINPLACE_CMD} '/supported_cflags=.*-fPIC/d' ${WRKSRC}/configure

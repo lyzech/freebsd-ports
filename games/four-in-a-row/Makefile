@@ -28,5 +28,6 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.gnome.four-in-a-row.gschema.xml
+CFLAGS+=	-fcommon
 
 .include <bsd.port.mk>

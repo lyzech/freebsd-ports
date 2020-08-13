@@ -17,6 +17,7 @@ USES=		cmake:insource gl pathfix xorg
 USE_LDCONFIG=	yes
 USE_XORG=	ice x11 xi xrandr
 USE_GL=		gl glu
+CFLAGS+=	-fcommon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid -lm
 INSTALL_TARGET=	install/strip

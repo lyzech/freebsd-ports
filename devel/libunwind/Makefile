@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	ac_cv_path_LATEX2MAN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CFLAGS+=	-fcommon
 
 PLIST_SUB=	ARCH=${ARCH:S|i386|x86|:S|amd64|x86_64|}
 

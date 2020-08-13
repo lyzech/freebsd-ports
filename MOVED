@@ -3016,7 +3016,6 @@ www/mod_index_rss||2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_layout|www/mod_layout22|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_limitipconn|www/mod_limitipconn2|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_log_spread||2012-01-01|Has expired: Depends on expired www/apache13
-www/mod_log_sql|www/mod_log_sql2|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_macro|www/mod_macro22|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_mp3||2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_mylo||2012-01-01|Has expired: Depends on expired www/apache13
@@ -12709,7 +12708,7 @@ lang/spidermonkey170|lang/spidermonkey52|2019-05-23|Not depended on, use newer v
 lang/spidermonkey38|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
 security/titan|security/ylva|2019-05-24|Project renamed by the developer
 www/npm-node6|www/npm|2019-05-25|node6 expired on Apr 30, 2019
-security/acme-client||2019-05-26|Removed
+devel/py-prompt_toolkit2|devel/py-prompt_toolkit|2019-05-26|Has expired: No longer required, use devel/py-prompt_toolkit instead
 net-im/qq||2019-05-26|Has expired: no longer supported upstream
 databases/rubygem-peek-mysql2-rails50|databases/rubygem-peek-mysql2-rails5|2019-05-28|Obsolete by gitlab-ce upgrade, use databases/rubygem-peek-mysql2-rails5 instead
 databases/rubygem-peek-pg-rails50|databases/rubygem-peek-pg-rails5|2019-05-28|Obsolete by gitlab-ce upgrade, use databases/rubygem-peek-pg-rails5 instead
@@ -14829,7 +14828,6 @@ security/xspy||2020-05-05|Has expired: Broken for more than 6 months
 shells/osh||2020-05-05|Has expired: Broken for more than 6 months
 shells/shell-include||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/abgx360gui||2020-05-05|Has expired: Broken for more than 6 months
-sysutils/autojump||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/backupchecker||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/cdf||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/cdls||2020-05-05|Has expired: Broken for more than 6 months
@@ -14916,7 +14914,6 @@ www/mod_encoding||2020-05-05|Has expired: Broken for more than 6 months
 www/mod_flickr||2020-05-05|Has expired: Broken for more than 6 months
 www/mod_gzip2||2020-05-05|Has expired: Broken for more than 6 months
 www/mod_layout22||2020-05-05|Has expired: Broken for more than 6 months
-www/mod_proctitle||2020-05-05|Has expired: Broken for more than 6 months
 www/mod_tsa||2020-05-05|Has expired: Broken for more than 6 months
 www/mod_vhs||2020-05-05|Has expired: Broken for more than 6 months
 www/p5-AnyEvent-Mojo||2020-05-05|Has expired: Broken for more than 6 months
@@ -15171,3 +15168,7 @@ sysutils/openshift-install|sysutils/openshift-install45|2020-07-25|Duplicate por
 databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite2 has stopped development in 2005, please move to SQLite3
 graphics/wayland-info|graphics/wayland-utils|2020-08-02|Project renamed
 devel/rubygem-grape11|devel/rubygem-grape|2020-08-03|Has expired: use devel/rubygem-grape instead
+astro/pyephem|astro/py-ephem|2020-08-04|Has expired: Use py-ephem instead.
+www/mod_log_sql2|www/mod_log_sql|2020-08-06|Remove Apache major version suffix since it is the only version in ports tree
+editors/nvi2-ports|editors/nvi2|2020-07-26|Rename to editors/nvi2
+net/kblog||2020-08-13|No longer shipped

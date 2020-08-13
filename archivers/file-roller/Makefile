@@ -30,6 +30,7 @@ MESON_ARGS=	-Dpackagekit=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
+CFLAGS+=	-fcommon
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NAUTILUS

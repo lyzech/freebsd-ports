@@ -37,6 +37,7 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-ssh
+CFLAGS+=	-fcommon
 CPPFLAGS+=	-Wno-format-nonliteral
 
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml

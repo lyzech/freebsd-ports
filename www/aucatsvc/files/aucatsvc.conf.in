@@ -1,0 +1,19 @@
+bind	localhost 8888
+chroot	%%CHROOT%%
+pidfile	/var/run/%%PORTNAME%%.pid
+runas	%%USER%%
+
+# Leave the below setting alone unless you want to break
+# things >:-)
+
+workers			1
+websocket_timeout	3600
+
+load	%%MODULE%% init
+
+domain * {
+	static	/		serve_index
+	static  /app.js		serve_app_js
+	static  /app.css	serve_app_css
+	static	/aucat		serve_aucat
+}

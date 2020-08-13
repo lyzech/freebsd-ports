@@ -3,8 +3,7 @@
 
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -15,18 +14,19 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-LIB_DEPENDS=	libFLAC.so:audio/flac \
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libFLAC.so:audio/flac \
+		libfltk.so:x11-toolkits/fltk \
 		libfluidsynth.so:audio/fluidsynth \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libgig.so:audio/libgig \
+		libogg.so:audio/libogg \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
-		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg \
-		libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float \
-		libfltk.so:x11-toolkits/fltk
-RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
-		${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
+		libvorbis.so:audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
+		${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
@@ -34,7 +34,8 @@ USES=		cmake compiler:c++11-lang desktop-file-utils localbase:ldflags \
 		pkgconfig qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	LMMS
-GH_TUPLE=	mjansson:rpmalloc:1.4.0:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
+GH_TUPLE=	falkTX:Carla:v2.1.1:carla/plugins/carlabase/carla \
+		mjansson:rpmalloc:1.4.0:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
 		lukas-w:qt5-x11embed:ec77d4ba40bebc0c53a016adb646b6fa65dd5faf:qt5x11embed/src/3rdparty/qt5-x11embed
 USE_LDCONFIG=	yes
 USE_QT=		core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
@@ -44,8 +45,8 @@ CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_SWH WANT_STK \
 		WANT_TAP WANT_VST
 CMAKE_ON=	WANT_QT5
 
-OPTIONS_DEFINE=		OSS JACK PULSEAUDIO PORTAUDIO SDL SNDIO
-OPTIONS_DEFAULT=	OSS
+OPTIONS_DEFINE=		JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
+OPTIONS_DEFAULT=	JACK OSS SNDIO
 
 JACK_CMAKE_BOOL=	WANT_JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -63,13 +64,14 @@ SDL_USE=		SDL=sdl
 SNDIO_CMAKE_BOOL=	WANT_SNDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr|${LOCALBASE}|g' ${WRKSRC}/src/core/ConfigManager.cpp
+.if ${LOCALBASE} != "/usr/local"
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/core/LadspaManager.cpp
-	@${REINPLACE_CMD} -e 's/lib64/lib/' \
-		${WRKSRC}/cmake/modules/DetectMachine.cmake
-	@${REINPLACE_CMD} 's,share/man/,man/,g' ${WRKSRC}/src/CMakeLists.txt
+.endif
 
 post-patch-OSS-off:
 	@${REINPLACE_CMD} \

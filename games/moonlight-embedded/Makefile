@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_SDL=	sdl2
 
-CFLAGS+=	-DPREFIX="\\\"${PREFIX}\\\""
+CFLAGS+=	-DPREFIX="\\\"${PREFIX}\\\"" -fcommon
 
 post-patch:
 	@${REINPLACE_CMD} -e '/(ALSA)/d' \

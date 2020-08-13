@@ -1,4 +1,4 @@
-bin/baloo_file
+@comment bin/baloo_file
 bin/baloo_file_extractor
 bin/balooctl
 bin/baloosearch
@@ -542,3 +542,4 @@ share/locale/zh_TW/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_tags.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_timeline.mo
 share/qlogging-categories5/baloo.categories
+share/qlogging-categories5/baloo.renamecategories

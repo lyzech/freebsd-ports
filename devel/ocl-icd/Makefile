@@ -29,6 +29,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--disable-official-khronos-headers \
 		--enable-custom-vendordir \
 		--enable-pthread-once
+CFLAGS+=		-fcommon
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES

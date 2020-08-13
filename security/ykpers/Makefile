@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/ykchalresp \
 		bin/ykinfo \

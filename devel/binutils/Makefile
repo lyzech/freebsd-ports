@@ -104,6 +104,7 @@ CONFIGURE_ARGS+=	--disable-werror \
 
 MAKE_ENV+=	ac_cv_func_sbrk=0
 MAKE_ARGS+=	LIBDL=""
+CFLAGS+=	-fcommon
 
 .include <bsd.port.pre.mk>
 

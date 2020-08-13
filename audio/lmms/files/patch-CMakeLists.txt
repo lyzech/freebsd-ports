@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-10-21 08:25:37 UTC
+--- CMakeLists.txt.orig	2020-07-17 10:46:11 UTC
 +++ CMakeLists.txt
-@@ -575,13 +575,13 @@ ADD_CUSTOM_TARGET(manpage ALL
+@@ -587,13 +587,13 @@ ADD_CUSTOM_TARGET(manpage ALL
  
  # install headers
  

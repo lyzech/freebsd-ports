@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: sndiod
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
+
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_config="%%PREFIX%%/etc/%%PORTNAME%%.conf"}
+: ${%%PORTNAME%%_flags="-c ${%%PORTNAME%%_config}"}
+
+command="%%PREFIX%%/bin/kore-notls"
+pidfile="/var/run/%%PORTNAME%%.pid"
+
+run_rc_command "$1"

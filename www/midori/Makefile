@@ -12,7 +12,7 @@ COMMENT=	Lightweight web browser using WebKit browser engine
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2 \
+BUILD_DEPENDS=	rsvg-convert:graphics/${LIBRSVG2_DEFAULT} \
 		valac:lang/vala
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libjson-glib-1.0.so:devel/json-glib \

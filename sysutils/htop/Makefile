@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--enable-unicode
 USE_GITHUB=	yes
 GH_ACCOUNT=	hishamhm
 SHEBANG_FILES=	scripts/MakeHeader.py
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/htop \
 		man/man1/htop.1.gz \

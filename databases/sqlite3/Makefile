@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.32.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2020/ http://www2.sqlite.org/2020/ http://www3.sqlite.org/2020/
@@ -134,8 +134,8 @@ GEOPOLY_IMPLIES=	RTREE
 
 OPTIONS_RADIO_RL=	READLINES READLINEP LIBEDIT
 RL_DESC=		Command line editing library (may be off)
-READLINES_DESC=		Use libreadline from system 	 
-READLINEP_DESC=		Use GNU libreadline from ports 	 
+READLINES_DESC=		Use libreadline from system
+READLINEP_DESC=		Use GNU libreadline from ports
 LIBEDIT_DESC=		Use BSD libedit from ports
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
@@ -206,10 +206,10 @@ UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
 LIBEDIT_CONFIGURE_ENABLE=	editline
 LIBEDIT_USES=	libedit ncurses
-READLINES_CONFIGURE_ON= --enable-readline
-READLINES_USES= readline
-READLINEP_CONFIGURE_ON= --enable-readline
-READLINEP_USES= readline:port
+READLINES_CONFIGURE_ON=	--enable-readline
+READLINES_USES=	readline
+READLINEP_CONFIGURE_ON=	--enable-readline
+READLINEP_USES=	readline:port
 
 JSON1_CONFIGURE_ENABLE=	json1
 

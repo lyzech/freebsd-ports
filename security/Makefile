@@ -12,6 +12,7 @@
     SUBDIR += R-cran-askpass
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-openssl
+    SUBDIR += acme-client
     SUBDIR += acme.sh
     SUBDIR += acmed
     SUBDIR += acmetool
@@ -234,6 +235,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
     SUBDIR += isakmpd
+    SUBDIR += isal-kmod
     SUBDIR += ismtp
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
@@ -867,6 +869,7 @@
     SUBDIR += py-certifi
     SUBDIR += py-certstream
     SUBDIR += py-ckcc-protocol
+    SUBDIR += py-coincurve
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-cryptography
@@ -911,6 +914,7 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
     SUBDIR += py-mcrypt
+    SUBDIR += py-merkletools
     SUBDIR += py-mixbox
     SUBDIR += py-mnemonic
     SUBDIR += py-msoffcrypto-tool
@@ -1098,6 +1102,7 @@
     SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-openssl
     SUBDIR += rubygem-openssl-ccm
+    SUBDIR += rubygem-openssl-cmac
     SUBDIR += rubygem-openvas-omp
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pbkdf2-ruby

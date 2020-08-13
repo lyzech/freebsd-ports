@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"
 CFLAGS+=	-fcommon
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-fcommon
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

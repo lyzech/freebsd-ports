@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 USES=		libtool:keepla readline
 
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-fcommon
 
 INFO=		gdbm
 
