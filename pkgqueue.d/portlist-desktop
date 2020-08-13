@@ -38,7 +38,6 @@ devel/kore@all
 devel/leiningen
 devel/libconcurrent
 devel/mercurial
-devel/plan9port
 devel/py-twisted
 devel/racer
 devel/subversion
@@ -157,7 +156,6 @@ sysutils/runit-faster
 sysutils/snooze
 sysutils/tarsnap
 sysutils/tmux
-sysutils/vagrant
 sysutils/xe
 sysutils/yank
 sysutils/zap
@@ -169,7 +167,6 @@ textproc/ripgrep
 textproc/sassc
 textproc/sd
 textproc/sonic
-textproc/the_silver_searcher
 textproc/xsv-rs
 www/firefox
 www/hiawatha
@@ -177,7 +174,6 @@ www/hiawatha-monitor
 www/newsboat
 www/nginx
 www/npm
-www/obhttpd
 www/stagit
 www/vimb
 www/youtube_dl
