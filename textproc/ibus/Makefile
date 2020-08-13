@@ -36,6 +36,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
 		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
 		--disable-python2 --disable-python-library
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO DOCS XIM ENGINE EMOJI
 OPTIONS_RADIO=	CONFIG
