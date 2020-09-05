@@ -41,6 +41,7 @@ USE_LDCONFIG=	yes
 USE_QT=		core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcursor xext xfixes xft xinerama xrender
 
+CMAKE_ARGS=	-DBASHCOMP_PKG_PATH=${STAGEDIR}${PREFIX}/share/bash-completion/completions
 CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_SWH WANT_STK \
 		WANT_TAP WANT_VST
 CMAKE_ON=	WANT_QT5
